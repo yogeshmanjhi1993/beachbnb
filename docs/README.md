@@ -13,6 +13,8 @@ of week 9, this app will, at a minimum, satisfy the following criteria with smoo
 * Reviews
 * **Bonus**: Messaging
 * **Bonus**: User/host profiles
+* **Bonus**: airBNB business
+* **Bonus**: OAuth login
 
 ## Design Docs
 * [View Wireframes](./wireframes/)
@@ -35,7 +37,42 @@ of week 9, this app will, at a minimum, satisfy the following criteria with smoo
 * create APIUtil to interact with API routes
 * Redux cycle for frontend authentication
 * Basic landing page with text bar to be used for search
-* Seed the DB
+* Seed the database with users
 * Set up demo login
 
-### Phase 2: Spot Model, API, and Components ()
+### Phase 2: Spot Model, API, and Components (2 days)
+**Objective:** Create Spot model/API and integrate with Google Maps API
+
+* Spot model/migration
+* Generate Spot routes
+* Create Spot Controller to handle the CRUD API
+* Create Spot components
+* Create foundational styling for the rest of the app
+* Seed database with test spots
+* JBuilder views for spots
+
+### Phase 3: Bookings (2 days)
+**Objective:** Create Bookings that belong to Users
+
+* Booking model
+* Seed database with test bookings
+* Allow users to host spots
+* CRUD API for bookings (BookingsController)
+* JBuilder views for Bookings
+* Adding and cancelling bookings by user
+* Style bookings pages
+
+### Phase 4: Reviews (2 days)
+**Objective:** Create Reviews that can be added to Spots
+
+* Review model
+* Seed database with test reviews
+* CRUD API for reviews (ReviewsController)
+* Create reviews form
+* Style reviews form and Spot page to include reviews form
+* Only show reviews form after a User has completed a booking
+
+### Bonus Features (TBD)
+* Create a messaging system between Users
+* Create profile pages for users/hosts
+* Set up a business travel section (like airBNB business)
