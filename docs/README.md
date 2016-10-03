@@ -21,3 +21,21 @@ of week 9, this app will, at a minimum, satisfy the following criteria with smoo
 * [DB schema](./schema.md)
 * [Redux Structure](./redux-structure.md)
 * [Sample State](./sample-state.md)
+
+## Implementation Timeline
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+**Objective:** Functioning rails project with integrated front-end/back-end Authentication
+
+* New Rails Project
+* User model/migration
+* Generate user/session/API routes
+* Back end authentication (session/password)
+* Static Pages controller and root view
+* Set up Webpack and react/redux modules
+* create APIUtil to interact with API routes
+* Redux cycle for frontend authentication
+* Basic landing page with text bar to be used for search
+* Seed the DB
+* Set up demo login
+
+### Phase 2: Spot Model, API, and Components ()
