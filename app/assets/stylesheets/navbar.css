@@ -1,0 +1,41 @@
+.nav-buttons {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.navbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-logo {
+  display: block;
+  float: left;
+  border-right: 2px solid #ccc;
+  padding: 10px 20px;
+}
+
+.nav-search {
+  float: left;
+  display: block;
+  padding: 10px 20px;
+}
+
+.nav-buttons {
+  float: right
+}
+
+.nav-buttons li {
+  float: left;
+  padding: 10px 20px;
+  border-left: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.nav-buttons > li:last-child {
+  border-right: 1px solid #ccc;
+}
