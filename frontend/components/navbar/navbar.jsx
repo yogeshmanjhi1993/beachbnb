@@ -34,15 +34,15 @@ const Navbar = ({ currentUser, logout }) => {
   );
 };
 
-class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-  getInitialState() {
-    
-  }
-}
+// class Navbar extends React.Component {
+//   constructor(props) {
+//     super(props);
+//
+//   }
+//
+//   getInitialState() {
+//
+//   }
+// }
 
 export default Navbar;
