@@ -2,22 +2,19 @@
   list-style: none;
 }
 
-
 .navbar {
+  box-sizing: border-box;
   border-bottom: 1px solid #ccc;
-  /*height: 63px;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-
 .nav-logo {
   display: block;
   width: 120px;
   border-right: 2px solid #ccc;
-  padding: 10px 20px;
+  padding: 22px 20px;
 }
 
 
@@ -31,13 +28,42 @@
   display: flex;
 }
 
-.nav-buttons li {
-  padding: 10px 20px;
+.nav-buttons > li {
+  padding: 22px 20px;
   border-right: 1px solid #ccc;
   font-size: 15px;
 }
 
-.nav-buttons li:hover,
+.nav-buttons > li:hover,
 .nav-logo:hover {
   background: rgb(245, 245, 245);
+}
+
+.profile-dropdown {
+  display: none;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  bottom: -63px;
+  border: 1px solid #000;
+
+}
+
+.nav-user-info {
+  position: relative;
+  display: block;
+}
+
+.nav-user-info:hover .profile-dropdown {
+  display: block;
+}
+
+.profile-dropdown li {
+  width: 285px;
+  height: 60px;
+  display: flex;
+}
+
+.nav-logout {
+  margin-left: 25px;
 }

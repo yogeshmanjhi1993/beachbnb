@@ -51,7 +51,12 @@ class Navbar extends React.Component {
         <li><button className="nav-trips">Trips</button></li>
         <li><button className="nav-messages">Messages</button></li>
         <li><button className="nav-help">Help</button></li>
-        <li><button className="nav-user-info">{currentUser.fname}</button></li>
+        <li className="nav-user-info">
+          <button>{currentUser.fname}</button>
+          <ul className="profile-dropdown">
+            <li onClick={this.props.logout}><button className="nav-logout">Log Out</button></li>
+          </ul>
+        </li>
       </ul>
     );
   }
@@ -64,20 +69,20 @@ class Navbar extends React.Component {
 
     return (
       <nav className="navbar">
-        <div className='nav-logo'>logo goes here</div>
+        <div className='nav-logo'>cool logo</div>
         <div className='nav-search'>search bar here</div>
         {buttons}
 
         <Modal
           isOpen={this.state.loginModalOpen}
           onRequestClose={this.closeLoginModal}>
-          <LoginFormContainer />
+          <LoginFormContainer closeModal={this.closeLoginModal}/>
         </Modal>
 
         <Modal
           isOpen={this.state.signupModalOpen}
           onRequestClose={this.closeSignupModal}>
-          <SignupFormContainer />
+          <SignupFormContainer closeModal={this.closeSignupModal} />
         </Modal>
 
       </nav>

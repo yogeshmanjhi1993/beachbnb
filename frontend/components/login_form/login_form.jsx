@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = { user: this.state };
     this.props.login(user);
+    this.props.closeModal();
   }
 
   update(field) {
