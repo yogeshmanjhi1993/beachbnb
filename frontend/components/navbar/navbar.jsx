@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
+import { loginModalStyle, signupModalStyle } from './modal_styles';
+
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class Navbar extends React.Component {
 
   closeLoginModal() {
     this.setState({ loginModalOpen: false });
+    this.props.clearErrors();
   }
 
   openLoginModal() {
@@ -27,6 +30,7 @@ class Navbar extends React.Component {
 
   closeSignupModal() {
     this.setState({ signupModalOpen: false });
+    this.props.clearErrors();
   }
 
   openSignupModal() {
@@ -38,8 +42,8 @@ class Navbar extends React.Component {
       <ul className='nav-buttons group'>
         <li><button className="nav-create-host">Become a Host</button></li>
         <li><button className="nav-help">Help</button></li>
-        <li><button className="nav-signup" onClick={this.openSignupModal}>Sign Up</button></li>
-        <li><button className="nav-login" onClick={this.openLoginModal}>Log In</button></li>
+        <li onClick={this.openSignupModal}><button className="nav-signup">Sign Up</button></li>
+        <li onClick={this.openLoginModal}><button className="nav-login">Log In</button></li>
       </ul>
     );
   }
@@ -60,8 +64,6 @@ class Navbar extends React.Component {
       </ul>
     );
   }
-  
- // modal dimensions: 450 x 540
 
   render() {
     const buttons = (this.props.currentUser) ?
@@ -76,21 +78,20 @@ class Navbar extends React.Component {
 
         <Modal
           isOpen={this.state.loginModalOpen}
-          onRequestClose={this.closeLoginModal}>
+          onRequestClose={this.closeLoginModal}
+          style={loginModalStyle}>
           <LoginFormContainer closeModal={this.closeLoginModal}/>
         </Modal>
 
         <Modal
           isOpen={this.state.signupModalOpen}
-          onRequestClose={this.closeSignupModal}>
+          onRequestClose={this.closeSignupModal}
+          style={signupModalStyle}>
           <SignupFormContainer closeModal={this.closeSignupModal} />
         </Modal>
-
       </nav>
     );
   }
-
-
 }
 
 export default Navbar;

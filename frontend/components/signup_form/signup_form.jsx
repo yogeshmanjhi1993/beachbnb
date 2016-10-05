@@ -26,7 +26,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
 		return(
-			<ul>
+			<ul className="form-errors">
 				{this.props.errors.map((error, i) => (
 					<li key={`error-${i}`}>
 						{error}
@@ -38,39 +38,33 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signin-form-div" onSubmit={this.handleSubmit}>
-        <form className="signin-form-box">
+      <div className="signup-form-div" onSubmit={this.handleSubmit}>
+        <form className="signup-form-box">
           { this.renderErrors() }
-          <div className="signin-form">
-            <input type="text"
-                   value={this.state.fname}
-                   onChange={this.update("fname")}
-                   className="signin-input"
-                   placeholder="First name" />
+          <input type="text"
+                 value={this.state.fname}
+                 onChange={this.update("fname")}
+                 className="signup-input form-input"
+                 placeholder="First name" />
 
-            <br />
-            <input type="text"
-                   value={this.state.lname}
-                   onChange={this.update("lname")}
-                   className="signin-input"
-                   placeholder="Last name" />
+          <input type="text"
+                 value={this.state.lname}
+                 onChange={this.update("lname")}
+                 className="signup-input form-input"
+                 placeholder="Last name" />
 
-            <br />
-            <input type="text"
-                   value={this.state.email}
-                   onChange={this.update("email")}
-                   className="signin-input"
-                   placeholder="Email address" />
+          <input type="text"
+                 value={this.state.email}
+                 onChange={this.update("email")}
+                 className="signup-input form-input"
+                 placeholder="Email address" />
 
-            <br />
-            <input type="password"
-                   value={this.state.password}
-                   onChange={this.update("password")}
-                   className="signin-input"
-                   placeholder="Password" />
-            <br />
-            <input type="submit" value="Sign up" />
-          </div>
+          <input type="password"
+                 value={this.state.password}
+                 onChange={this.update("password")}
+                 className="signup-input form-input"
+                 placeholder="Password" />
+               <input type="submit" value="Sign up" className='user-submit signup-submit'/>
         </form>
       </div>
     );

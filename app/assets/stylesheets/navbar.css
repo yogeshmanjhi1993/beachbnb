@@ -77,3 +77,58 @@
   padding: 5px 5px;
   border: 2px solid #ccc;
 }
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  width: 365px;
+  height: 65px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  padding-left: 16px;
+}
+
+.signup-input {
+  width: 365px;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  padding-left: 16px;
+}
+
+.signup-submit {
+  margin-top: 15px;
+}
+.user-submit {
+  width: 365px;
+  height: 65px;
+  background: rgb(255, 90, 95);
+  padding: 0 8px;
+  border: 1px solid rgb(255, 90, 95);
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 10px rgb(63, 123, 184);
+}
+
+.form-errors {
+  list-style: none;
+  padding-left: 10px;
+}
