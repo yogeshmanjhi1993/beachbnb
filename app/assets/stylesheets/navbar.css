@@ -113,6 +113,8 @@
 .signup-submit {
   margin-top: 15px;
 }
+
+
 .user-submit {
   width: 365px;
   height: 65px;
@@ -124,8 +126,14 @@
   text-align: center;
 }
 
+.guest-login {
+  margin-top: 15px;
+  background: lightblue;
+  border: 1px solid lightblue;
+}
+
 .form-input:focus {
-  box-shadow: 0 0 10px rgb(63, 123, 184);
+  box-shadow: 0 0 5px lightblue;
 }
 
 .form-errors {

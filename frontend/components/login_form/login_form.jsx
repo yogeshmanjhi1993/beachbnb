@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,6 +35,11 @@ class LoginForm extends React.Component {
 		);
 	}
 
+  guestLogin() {
+    const guest = { user: { email: "guest@user.com", password: "guestpass" } };
+    this.props.login(guest, this.props.closeModal);
+  }
+
   render() {
     return (
       <div className="login-form-div" onSubmit={this.handleSubmit}>
@@ -51,6 +57,10 @@ class LoginForm extends React.Component {
                  className="login-input form-input"
                  placeholder="Password" />
           <input type="submit" value="Log in" className="user-submit" />
+          <input type="button"
+                 value="Guest Log in"
+                 className="user-submit guest-login"
+                 onClick={this.guestLogin} />
         </form>
       </div>
     );
