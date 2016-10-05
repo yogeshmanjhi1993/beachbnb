@@ -60,7 +60,6 @@ class Navbar extends React.Component {
   render() {
     const buttons = (this.props.currentUser) ?
       this.loggedInButtons(this.props.currentUser) :
-      // <LoggedInButtons currentUser={this.currentUser} /> :
       this.loggedOutButtons();
 
     return (
