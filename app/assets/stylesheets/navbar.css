@@ -39,3 +39,8 @@
 .nav-buttons > li:last-child {
   border-right: 1px solid #ccc;
 }
+
+.nav-buttons li:hover,
+.nav-logo:hover {
+  background: rgb(245, 245, 245);
+}
