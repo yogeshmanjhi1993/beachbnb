@@ -2,35 +2,37 @@
   list-style: none;
 }
 
-.group:after {
-  content: "";
-  clear: both;
-  display: block;
-}
 
 .navbar {
   border-bottom: 1px solid #ccc;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
 }
+
+
 
 .nav-logo {
   display: block;
-  float: left;
+  width: 120px;
   border-right: 2px solid #ccc;
   padding: 10px 20px;
 }
 
+
 .nav-search {
-  float: left;
   display: block;
   padding: 10px 20px;
+  flex-grow: 1;
 }
 
 .nav-buttons {
-  float: right
+  display: flex;
 }
 
 .nav-buttons li {
-  float: left;
   padding: 10px 20px;
   border-left: 1px solid #ccc;
   font-size: 15px;
