@@ -15,13 +15,14 @@
   width: 120px;
   border-right: 2px solid #ccc;
   padding: 22px 20px;
+  font-size: 13px;
 }
-
 
 .nav-search {
   display: block;
   padding: 10px 20px;
   flex-grow: 1;
+  font-size: 13px;
 }
 
 .nav-buttons {
@@ -31,7 +32,11 @@
 .nav-buttons > li {
   padding: 22px 20px;
   border-right: 1px solid #ccc;
-  font-size: 15px;
+  font-size: 13px;
+}
+
+.nav-buttons > li:first-child {
+  padding: 17px 15px;
 }
 
 .nav-buttons > li:hover,
@@ -66,4 +71,9 @@
 
 .nav-logout {
   margin-left: 25px;
+}
+
+.nav-create-host {
+  padding: 5px 5px;
+  border: 2px solid #ccc;
 }

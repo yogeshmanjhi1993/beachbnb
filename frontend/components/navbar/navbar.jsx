@@ -60,7 +60,8 @@ class Navbar extends React.Component {
       </ul>
     );
   }
-
+  
+ // modal dimensions: 450 x 540
 
   render() {
     const buttons = (this.props.currentUser) ?
