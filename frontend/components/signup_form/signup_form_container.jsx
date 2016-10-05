@@ -7,7 +7,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  signup: (user) => dispatch(signup(user))
+  signup: (user, callback) => dispatch(signup(user, callback))
 });
 
 const SignupFormContainer = connect(

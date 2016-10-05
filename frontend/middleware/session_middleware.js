@@ -8,7 +8,11 @@ import { receiveCurrentUser,
 import { login, signup, logout } from '../util/session_api_util';
 
 const SessionMiddleware = ({ getState, dispatch }) => next => action => {
-  const success = user => dispatch(receiveCurrentUser(user));
+  const success = user => {
+    action.callback();
+    dispatch(receiveCurrentUser(user));
+  };
+
   const error = res => dispatch(receiveErrors(res.responseJSON));
 
   switch(action.type) {

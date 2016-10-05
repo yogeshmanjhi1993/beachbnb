@@ -13,8 +13,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { user: this.state };
-    this.props.login(user);
-    this.props.closeModal();
+    this.props.login(user, this.props.closeModal);
   }
 
   update(field) {
