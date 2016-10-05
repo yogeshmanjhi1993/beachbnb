@@ -13,7 +13,7 @@ const SessionMiddleware = ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case LOGIN:
-      login({ user: action.user }, success, error);
+      login(action.user, success, error);
       return next(action);
     case LOGOUT:
       logout(() => next(action));

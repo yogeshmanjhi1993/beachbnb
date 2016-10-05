@@ -1,10 +1,12 @@
 import React from 'react';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
+      fname: "",
+      lname: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,7 +15,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = { user: this.state };
-    this.props.login(user);
+    this.props.signup(user);
   }
 
   update(field) {
@@ -36,22 +38,34 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-div" onSubmit={this.handleSubmit}>
-        <form className="login-form-box">
+      <div className="signin-form-div" onSubmit={this.handleSubmit}>
+        <form className="signin-form-box">
           { this.renderErrors() }
-          <div className="login-form">
+          <div className="signin-form">
+            <input type="text"
+                   value={this.state.fname}
+                   onChange={this.update("fname")}
+                   className="signin-input" />
+
+            <br />
+            <input type="text"
+                   value={this.state.lname}
+                   onChange={this.update("lname")}
+                   className="signin-input" />
+
+            <br />
             <input type="text"
                    value={this.state.email}
                    onChange={this.update("email")}
-                   className="login-input" />
+                   className="signin-input" />
 
             <br />
             <input type="password"
                    value={this.state.password}
                    onChange={this.update("password")}
-                   className="login-input" />
+                   className="signin-input" />
             <br />
-            <input type="submit" value="Log in" />
+            <input type="submit" value="Sign up" />
           </div>
         </form>
       </div>
@@ -59,4 +73,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default SignupForm;
