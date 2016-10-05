@@ -12,10 +12,11 @@
 
 .nav-logo {
   display: block;
-  width: 120px;
+  width: 140px;
   border-right: 2px solid #ccc;
-  padding: 24px 20px;
-  font-size: 13px;
+  padding: 19px 20px;
+  font-size: 18px;
+  color: rgb(215, 76, 80);
 }
 
 .nav-search {
@@ -93,27 +94,28 @@
 }
 
 .login-input {
-  width: 365px;
+  width: 329px;
   height: 65px;
   border: 1px solid gray;
   border-radius: 2px;
   margin-bottom: 10px;
   padding-left: 16px;
+  padding-right: 36px;
 }
 
 .signup-input {
-  width: 365px;
+  width: 329px;
   height: 40px;
   border: 1px solid gray;
   border-radius: 2px;
   margin-bottom: 5px;
   padding-left: 16px;
+  padding-right: 36px;
 }
 
 .signup-submit {
   margin-top: 15px;
 }
-
 
 .user-submit {
   width: 365px;
@@ -139,4 +141,62 @@
 .form-errors {
   list-style: none;
   padding-left: 10px;
+}
+
+.fa-paper-plane-o {
+  font-size: 24px;
+}
+
+.signup-input-icon {
+  position: absolute;
+  top: 10px;
+  font-size: 20px;
+  color: rgb(138, 143, 145);
+}
+
+.login-input-icon {
+  position: absolute;
+  font-size: 30px;
+  color: rgb(138, 143, 145);
+  top: 15px;
+}
+
+.fa-user {
+  right: 10px;
+}
+
+.input-email-icon {
+  right: 7px;
+}
+
+.input-lock-icon {
+  right: 11px;
+}
+
+.login-email-icon {
+  right: 7px;
+}
+
+.login-lock-icon {
+  right: 13px;
+}
+
+.input-item {
+  position: relative;
+}
+
+.nav-search {
+  color: rgb(118, 118, 118);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.location-search {
+  flex-grow: 1;
+}
+
+.fa-search {
+  color: rgb(205, 205, 205);
+  font-size: 30px;
+  padding-right: 10px;
 }

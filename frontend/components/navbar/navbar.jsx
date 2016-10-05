@@ -65,6 +65,7 @@ class Navbar extends React.Component {
     );
   }
 
+  // TODO: REPLACE SEARCH FORM
   render() {
     const buttons = (this.props.currentUser) ?
       this.loggedInButtons(this.props.currentUser) :
@@ -72,8 +73,13 @@ class Navbar extends React.Component {
 
     return (
       <nav className="navbar">
-        <div className='nav-logo'>cool logo</div>
-        <div className='nav-search'>search bar here</div>
+        <div className='nav-logo'>
+          <i className="fa fa-paper-plane-o" aria-hidden="true"></i> airCLD
+        </div>
+        <div className='nav-search'>
+          <i className="fa fa-search" aria-hidden="true"></i>
+          <input type="text" placeholder="Where to?" className="location-search"/>
+        </div>
         {buttons}
 
         <Modal

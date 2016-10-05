@@ -41,29 +41,38 @@ class SignupForm extends React.Component {
       <div className="signup-form-div" onSubmit={this.handleSubmit}>
         <form className="signup-form-box">
           { this.renderErrors() }
-          <input type="text"
-                 value={this.state.fname}
-                 onChange={this.update("fname")}
-                 className="signup-input form-input"
-                 placeholder="First name" />
-
-          <input type="text"
-                 value={this.state.lname}
-                 onChange={this.update("lname")}
-                 className="signup-input form-input"
-                 placeholder="Last name" />
-
-          <input type="text"
-                 value={this.state.email}
-                 onChange={this.update("email")}
-                 className="signup-input form-input"
-                 placeholder="Email address" />
-
-          <input type="password"
-                 value={this.state.password}
-                 onChange={this.update("password")}
-                 className="signup-input form-input"
-                 placeholder="Password" />
+          <div className="input-item">
+            <input type="text"
+              value={this.state.fname}
+              onChange={this.update("fname")}
+              className="signup-input form-input"
+              placeholder="First name" />
+            <i className="fa fa-user signup-input-icon" aria-hidden="true"></i>
+          </div>
+          <div className="input-item">
+            <input type="text"
+              value={this.state.lname}
+              onChange={this.update("lname")}
+              className="signup-input form-input"
+              placeholder="Last name" />
+            <i className="fa fa-user signup-input-icon" aria-hidden="true"></i>
+          </div>
+          <div className="input-item">
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              className="signup-input form-input"
+              placeholder="Email address" />
+            <i className="fa fa-envelope-o signup-input-icon input-email-icon" aria-hidden="true"></i>
+          </div>
+          <div className="input-item">
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              className="signup-input form-input"
+              placeholder="Password" />
+            <i className="fa fa-lock signup-input-icon input-lock-icon" aria-hidden="true"></i>
+          </div>
                <input type="submit" value="Sign up" className='user-submit signup-submit'/>
         </form>
       </div>
