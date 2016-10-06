@@ -8,6 +8,14 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+  def index
+    @spots = Spot.all
+  end
+
+  def show
+    @spot = Spot.find(params[:id])
+  end
+
   private
 
   def spot_params
