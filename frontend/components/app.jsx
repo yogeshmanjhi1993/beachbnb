@@ -3,7 +3,7 @@ import NavbarContainer from './navbar/navbar_container';
 
 const App = ({ children }) => {
   return (
-    <div>
+    <div className="app-div">
       <NavbarContainer />
       {children}
     </div>
