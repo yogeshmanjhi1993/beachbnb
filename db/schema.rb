@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004175934) do
+ActiveRecord::Schema.define(version: 20161006145125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "spots", force: :cascade do |t|
+    t.integer  "host_id",     null: false
+    t.float    "lat",         null: false
+    t.float    "lng",         null: false
+    t.string   "description", null: false
+    t.integer  "bedrooms",    null: false
+    t.integer  "beds",        null: false
+    t.string   "roomtype",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["host_id"], name: "index_spots_on_host_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "password_digest", null: false

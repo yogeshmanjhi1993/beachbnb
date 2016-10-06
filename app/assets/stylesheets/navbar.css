@@ -40,6 +40,7 @@
   padding: 22px 20px;
   border-right: 1px solid #ccc;
   font-size: 13px;
+  color: rgb(65, 65, 65)
 }
 
 .nav-buttons > li:first-child {
