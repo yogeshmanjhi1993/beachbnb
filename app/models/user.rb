@@ -19,7 +19,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :spots,
-    class_name: "User",
+    class_name: "Spot",
     foreign_key: :host_id,
     primary_key: :id,
     dependent: :destroy
