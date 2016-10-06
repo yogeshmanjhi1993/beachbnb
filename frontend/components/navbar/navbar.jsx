@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
 import { loginModalStyle, signupModalStyle } from './modal_styles';
+import { hashHistory } from 'react-router';
 
 
 class Navbar extends React.Component {
@@ -65,6 +66,10 @@ class Navbar extends React.Component {
     );
   }
 
+  returnToHome() {
+    hashHistory.push("/");
+  }
+
   // TODO: REPLACE SEARCH FORM
   render() {
     const buttons = (this.props.currentUser) ?
@@ -73,7 +78,7 @@ class Navbar extends React.Component {
 
     return (
       <nav className="navbar">
-        <div className='nav-logo'>
+        <div className='nav-logo' onClick={this.returnToHome}>
           <i className="fa fa-paper-plane-o" aria-hidden="true"></i> airCLD
         </div>
         <div className='nav-search'>
