@@ -10,21 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006145125) do
+ActiveRecord::Schema.define(version: 20161006154852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "spots", force: :cascade do |t|
-    t.integer  "host_id",     null: false
-    t.float    "lat",         null: false
-    t.float    "lng",         null: false
-    t.string   "description", null: false
-    t.integer  "bedrooms",    null: false
-    t.integer  "beds",        null: false
-    t.string   "roomtype",    null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "host_id",            null: false
+    t.float    "lat",                null: false
+    t.float    "lng",                null: false
+    t.string   "description",        null: false
+    t.integer  "bedrooms",           null: false
+    t.integer  "beds",               null: false
+    t.string   "roomtype",           null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["host_id"], name: "index_spots_on_host_id", using: :btree
   end
 
