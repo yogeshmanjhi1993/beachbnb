@@ -1,0 +1,58 @@
+.home-page {
+  background-image: asset-url("modern2.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  background-color: rgb(12, 14, 13);
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.heading-box {
+  width: 55%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin: 65px auto 130px auto;
+}
+
+.main-heading {
+  margin-top: 110px;
+  font-size: 44px;
+}
+
+.heading-sentence {
+  font-size: 18px;
+  display: block;
+  width: 450px;
+}
+
+.home-search-listings {
+  box-sizing: border-box;
+  width: 65%;
+  max-width: 1080px;
+  height: 100%;
+  background: white;
+  padding: 60px;
+}
+
+.search-heading {
+  font-size: 24px;
+  padding-bottom: 30px;
+}
+
+.temp-search {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
