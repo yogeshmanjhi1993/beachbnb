@@ -6,7 +6,7 @@ const SpotIndex = ({spots}) => {
     <div className="spot-index">
         <p>{spots.length} Rentals</p>
         {
-          spots.map( spot => (
+          spots.map(spot => (
             <SpotIndexItem spot={spot} key={spot.id} />
           ))
         }

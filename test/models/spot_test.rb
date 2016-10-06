@@ -16,6 +16,7 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  name               :string           not null
 #
 
 require 'test_helper'

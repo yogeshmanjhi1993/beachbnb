@@ -16,10 +16,11 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  name               :string           not null
 #
 
 class Spot < ApplicationRecord
-  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype,
+  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name,
     presence: true
 
   has_attached_file :image, default_url: "modern2.jpg"

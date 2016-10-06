@@ -10,8 +10,10 @@ class SpotIndexItem extends React.Component {
     const spot = this.props.spot;
     return (
       <div className="spot-index-item">
-        
+        <p>{spot.name}</p>
       </div>
     );
   }
 }
+
+export default SpotIndexItem;

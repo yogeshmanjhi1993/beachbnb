@@ -26,6 +26,7 @@ class Api::SpotsController < ApplicationController
                                  :beds,
                                  :guests,
                                  :roomtype,
-                                 :description)
+                                 :description,
+                                 :name)
   end
 end
