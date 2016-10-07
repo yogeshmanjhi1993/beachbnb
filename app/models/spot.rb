@@ -18,10 +18,11 @@
 #  image_updated_at   :datetime
 #  name               :string           not null
 #  price              :integer          not null
+#  guests             :integer          not null
 #
 
 class Spot < ApplicationRecord
-  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name, :price,
+  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name, :price, :guests,
     presence: true
 
   validates :roomtype, inclusion: { in: %w(shared private whole) }

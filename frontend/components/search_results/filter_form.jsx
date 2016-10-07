@@ -42,7 +42,8 @@ class FilterForm extends React.Component {
             <div className="min-price">{minPrice}</div>
             <div className="max-price">{maxPrice}</div>
           </Rheostat>
-
+        </div>
+        <div className="roomtype-selector">
 
         </div>
       </div>

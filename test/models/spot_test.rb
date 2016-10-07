@@ -18,6 +18,7 @@
 #  image_updated_at   :datetime
 #  name               :string           not null
 #  price              :integer          not null
+#  guests             :integer          not null
 #
 
 require 'test_helper'

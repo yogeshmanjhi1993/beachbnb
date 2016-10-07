@@ -18,6 +18,7 @@
 #  image_updated_at   :datetime
 #  name               :string           not null
 #  price              :integer          not null
+#  guests             :integer          not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

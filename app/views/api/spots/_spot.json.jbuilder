@@ -1,2 +1,3 @@
 json.extract! spot, :id, :description, :host_id, :lat, :lng,
-                    :bedrooms, :beds, :roomtype, :name
+                    :bedrooms, :beds, :roomtype, :name, :price, :guests,
+                    :image

@@ -11,7 +11,7 @@
 .index-half {
   box-sizing: border-box;
   width: 60%;
-  padding: 0 100px 15px 20px;
+  padding: 0 25px 15px 20px;
 }
 
 .map-half {
@@ -26,10 +26,15 @@
 
 .filter-form {
   font-size: 13px;
+
 }
 
 .filter-form p {
   width: 15%;
+}
+
+.filter-form > div {
+  padding-right: 50px
 }
 
 .form-slider {
@@ -55,4 +60,14 @@
   position: absolute;
   left: 10px;
   top: 20px;
+}
+
+.spot-index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spot-index-item {
+  width: 50%;
+  border: 1px solid black;
 }

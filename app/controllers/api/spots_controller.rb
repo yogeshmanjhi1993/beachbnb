@@ -30,6 +30,8 @@ class Api::SpotsController < ApplicationController
                                  :guests,
                                  :roomtype,
                                  :description,
-                                 :name)
+                                 :name,
+                                 :guests,
+                                 :price)
   end
 end
