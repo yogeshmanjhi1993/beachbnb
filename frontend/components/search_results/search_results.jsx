@@ -6,7 +6,7 @@ import FilterForm from './filter_form';
 const SearchResults = ({ spots, updateFilter }) => (
   <div className="search-results-page">
     <div className="index-half">
-      <FilterForm />
+      <FilterForm updateFilter={updateFilter}/>
       <SpotIndex spots={spots} />
     </div>
     <div className="map-half">

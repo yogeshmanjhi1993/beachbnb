@@ -3,8 +3,7 @@ import merge from 'lodash/merge';
 
 const _defaultFilters = Object.freeze({
   bounds: {},
-  minPrice: 0,
-  maxPrice: 100000,
+  priceRange: { min: 10, max: 100000 },
   roomtype: []
 });
 
