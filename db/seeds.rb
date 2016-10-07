@@ -22,7 +22,7 @@ otheruser = User.create(
 )
 
 Spot.destroy_all
-Spot.create(
+s1 = Spot.create(
   host_id: guestuser.id,
   lat: -16.467138,
   lng: -151.750323,
@@ -34,7 +34,7 @@ Spot.create(
   price: 200,
   guests: 10
 )
-Spot.create(
+s2 = Spot.create(
   host_id: otheruser.id,
   lat: -16.496932,
   lng: -151.741740,
@@ -46,7 +46,7 @@ Spot.create(
   price: 50,
   guests: 2
 )
-Spot.create(
+s3 = Spot.create(
   host_id: otheruser.id,
   lat: -16.533999,
   lng: -151.738202,
@@ -58,3 +58,10 @@ Spot.create(
   price: 100,
   guests: 5
 )
+
+s1.image = File.open('app/assets/images/bora1.jpg')
+s1.save!
+s2.image = File.open('app/assets/images/bora2.jpg')
+s2.save!
+s3.image = File.open('app/assets/images/bora3.jpg')
+s3.save!

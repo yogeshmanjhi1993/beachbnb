@@ -65,9 +65,46 @@
 .spot-index {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
 }
 
 .spot-index-item {
-  width: 50%;
-  border: 1px solid black;
+  width: 49%;
+  padding-bottom: 20px;
+}
+
+.image-item-div {
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+.index-item-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spot-price {
+  position: absolute;
+  left: 0;
+  bottom: 35px;
+  padding: 10px;
+  background: rgb(65, 65, 65);
+  color: white;
+  font-size: 19px;
+}
+
+.spot-name {
+  padding-top: 15px;
+  padding-left: 10px;
+  color: rgb(72, 72, 72);
+}
+
+.spot-type-guests {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: rgb(127, 127, 127);
+  font-size: 13px;
 }

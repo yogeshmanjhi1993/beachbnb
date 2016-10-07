@@ -16,12 +16,17 @@ class SpotIndexItem extends React.Component {
     } else {
       roomType = "Private room";
     }
+
+    let guestText = (spot.guests === 1) ? "guest" : "guests";
+
     return (
       <div className="spot-index-item">
-        <p>{spot.name}</p>
-        <p>guests: {spot.guests}</p>
-        <p>{roomType}</p>
-        <p>${spot.price}</p>
+        <div className="image-item-div">
+          <img src={spot.image} alt="spot image" className="index-item-img" />
+          <p className="spot-price">${spot.price}</p>
+        </div>
+        <p className="spot-name">{spot.name}</p>
+        <p className="spot-type-guests">{roomType} · {spot.guests} {guestText}</p>
       </div>
     );
   }
