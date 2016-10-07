@@ -1,7 +1,8 @@
-export const fetchSpots = (success) => {
+export const fetchSpots = (success, filters) => {
   $.ajax({
     method: "GET",
     url: "api/spots",
+    data: filters,
     success,
     error: () => console.log('error in spot api util#fetchSpots')
   });

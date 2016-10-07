@@ -9,7 +9,7 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    @spots = Spot.all
+    @spots = params[:bounds] ? Spot.in_bounds(params[:bounds]) : Spot.all
   end
 
   def show

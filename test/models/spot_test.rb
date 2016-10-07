@@ -17,6 +17,7 @@
 #  image_file_size    :integer
 #  image_updated_at   :datetime
 #  name               :string           not null
+#  price              :integer          not null
 #
 
 require 'test_helper'

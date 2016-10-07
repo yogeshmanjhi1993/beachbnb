@@ -3,8 +3,9 @@
   top: 65px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 65px);
   display: flex;
+  z-index: 1;
 }
 
 .index-half {
@@ -13,13 +14,11 @@
 
 .map-half {
   width: 40%;
+  position: relative;
+  z-index: -1;
 }
 
 #map-container {
   width: 100%;
   height: 100%;
-}
-
-.app-div {
-  overflow: hidden;
 }

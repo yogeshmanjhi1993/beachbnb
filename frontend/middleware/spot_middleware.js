@@ -9,14 +9,20 @@ import { REQUEST_SPOTS,
          requestSpots
        } from '../actions/spot_actions';
 import { fetchSpots, fetchSpot, createSpot } from '../util/spot_api_util';
+import { UPDATE_FILTER } from '../actions/filter_actions';
 
 const SpotMiddleware = ({ getState, dispatch }) => next => action => {
   const spotsSuccess = data => dispatch(receiveSpots(data));
   const spotSuccess = data => dispatch(receiveSingleSpot(data));
   switch(action.type) {
     case REQUEST_SPOTS:
-      fetchSpots(spotsSuccess);
+      const filters = getState().filters;
+      fetchSpots(spotsSuccess, filters);
       return next(action);
+    case UPDATE_FILTER:
+      next(action);
+      dispatch(requestSpots());
+      break;
     case REQUEST_SINGLE_SPOT:
       fetchSpot(action.id, spotSuccess);
       break;
