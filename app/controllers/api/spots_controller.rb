@@ -10,6 +10,9 @@ class Api::SpotsController < ApplicationController
 
   def index
     @spots = params[:bounds] ? Spot.in_bounds(params[:bounds]) : Spot.all
+    @spots = @spots.select do |spot|
+      spot.price.between?(params[:minPrice].to_i, params[:maxPrice].to_i)
+    end
   end
 
   def show

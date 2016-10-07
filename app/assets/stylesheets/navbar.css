@@ -55,7 +55,7 @@
 .profile-dropdown {
   display: none;
   list-style: none;
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: -63px;
   border: 1px solid #eee;

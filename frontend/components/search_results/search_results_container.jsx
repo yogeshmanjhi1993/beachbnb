@@ -4,7 +4,10 @@ import { asArray } from '../../reducers/selectors';
 import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = state => ({
-  spots: asArray(state.spots)
+  spots: asArray(state.spots),
+  minPrice: state.filters.minPrice,
+  maxPrice: state.filters.maxPrice,
+  roomtype: state.filters.roomtype
 });
 
 const mapDispatchToProps = dispatch => ({
