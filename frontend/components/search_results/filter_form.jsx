@@ -35,7 +35,7 @@ class FilterForm extends React.Component {
     let maxPrice = (this.state.max === 1000) ? "$1,000+" : `$${this.state.max}`;
     return (
       <div className="filter-form">
-        <div className="roomtype-selector form-input">
+        <div className="roomtype-selector filter-form-input">
           <p>Room type</p>
           <div className="input-els checkboxes">
             <div className="checkbox">
@@ -55,7 +55,7 @@ class FilterForm extends React.Component {
             </div>
           </div>
         </div>
-        <div className="price-slider form-input">
+        <div className="price-slider filter-form-input">
           <p>Price Range</p>
           <Rheostat
             className="form-slider input-els"

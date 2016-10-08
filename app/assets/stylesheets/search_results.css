@@ -64,12 +64,11 @@
   margin: 40px;
 }
 
-.form-input {
+.filter-form-input {
   display: flex;
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #ccc;
-  /*margin-bottom: 20px;*/
 }
 
 .max-price {
