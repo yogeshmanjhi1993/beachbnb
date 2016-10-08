@@ -12,6 +12,7 @@
   box-sizing: border-box;
   width: 60%;
   padding: 0 25px 15px 20px;
+
 }
 
 .map-half {
@@ -67,6 +68,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
+  max-height: 85%;
+  overflow-y: scroll;
 }
 
 .spot-index-item {
