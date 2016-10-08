@@ -17,9 +17,15 @@ class FilterForm extends React.Component {
   }
 
   updatePriceFilter(e) {
+    let maxPrice;
+    if (e.values[1] === 1000) {
+      maxPrice = 100000000;
+    } else {
+      maxPrice = e.values[1];
+    }
     const priceRange = {
       min: e.values[0],
-      max: e.values[1]
+      max: maxPrice
     };
     this.props.updateFilter("priceRange", priceRange);
   }
@@ -29,10 +35,30 @@ class FilterForm extends React.Component {
     let maxPrice = (this.state.max === 1000) ? "$1,000+" : `$${this.state.max}`;
     return (
       <div className="filter-form">
-        <div className="price-slider">
+        <div className="roomtype-selector form-input">
+          <p>Room type</p>
+          <div className="input-els checkboxes">
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                value="whole"/>
+            </div>
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                value="private"/>
+            </div>
+            <div className="checkbox">
+              <input
+                type="checkbox"
+                value="shared"/>
+            </div>
+          </div>
+        </div>
+        <div className="price-slider form-input">
           <p>Price Range</p>
           <Rheostat
-            className="form-slider"
+            className="form-slider input-els"
             min={10}
             max={1000}
             values={[this.state.min, this.state.max]}
@@ -42,9 +68,6 @@ class FilterForm extends React.Component {
             <div className="min-price">{minPrice}</div>
             <div className="max-price">{maxPrice}</div>
           </Rheostat>
-        </div>
-        <div className="roomtype-selector">
-
         </div>
       </div>
     );

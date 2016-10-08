@@ -12,6 +12,8 @@
   box-sizing: border-box;
   width: 60%;
   padding: 0 25px 15px 20px;
+  max-height: 100%;
+  overflow-y: scroll;
 
 }
 
@@ -27,7 +29,7 @@
 
 .filter-form {
   font-size: 13px;
-
+  margin-bottom: 20px;
 }
 
 .filter-form p {
@@ -38,17 +40,36 @@
   padding-right: 50px
 }
 
-.form-slider {
-  margin: 40px;
+.input-els {
   width: 85%;
+  margin: auto;
 }
 
-.price-slider {
+
+
+.roomtype-selector {
+
+}
+.checkboxes {
+  margin: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox {
+  width: 33%;
+}
+
+.form-slider {
+  margin: 40px;
+}
+
+.form-input {
   display: flex;
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .max-price {
@@ -68,8 +89,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: flex-start;
-  max-height: 85%;
-  overflow-y: scroll;
+
 }
 
 .spot-index-item {
@@ -97,6 +117,7 @@
   background: rgb(65, 65, 65);
   color: white;
   font-size: 19px;
+  opacity: .9;
 }
 
 .spot-name {
