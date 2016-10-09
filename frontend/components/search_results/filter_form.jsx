@@ -55,7 +55,6 @@ class FilterForm extends React.Component {
   }
 
   updateRoomFilter () {
-
     let roomtypes = [];
     if (this.state.sharedCheck) {
       roomtypes.push("shared");
@@ -83,6 +82,10 @@ class FilterForm extends React.Component {
           <p>Room type</p>
           <div className="input-els checkboxes">
             <div className="checkbox">
+              <div>
+                <i className="fa fa-home check-icon" aria-hidden="true"></i>
+                Entire home
+              </div>
               <input
                 type="checkbox"
                 value="whole"
@@ -90,6 +93,10 @@ class FilterForm extends React.Component {
                 onChange={this.updateRoomtype}/>
             </div>
             <div className="checkbox">
+              <div>
+                <i className="fa fa-user check-icon" aria-hidden="true"></i>
+                Private room
+              </div>
               <input
                 type="checkbox"
                 value="private"
@@ -97,6 +104,10 @@ class FilterForm extends React.Component {
                 onChange={this.updateRoomtype}/>
             </div>
             <div className="checkbox">
+              <div>
+                <i className="fa fa-users check-icon" aria-hidden="true"></i>
+                Shared room
+              </div>
               <input
                 type="checkbox"
                 value="shared"
