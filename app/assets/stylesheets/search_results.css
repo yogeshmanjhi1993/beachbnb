@@ -45,19 +45,18 @@
   margin: auto;
 }
 
-
-
-.roomtype-selector {
-
-}
 .checkboxes {
   margin: 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
 }
 
 .checkbox {
-  width: 33%;
+  width: 31%;
+  background: rgb(237, 239, 237);
+  border: 1px solid rgb(220, 224, 224);
+  padding: 10px 7px;
 }
 
 .form-slider {

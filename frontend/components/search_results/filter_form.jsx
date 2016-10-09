@@ -6,10 +6,15 @@ class FilterForm extends React.Component {
     super(props);
     this.state = {
       min: 10,
-      max: 1000
+      max: 1000,
+      wholeCheck: false,
+      privateCheck: false,
+      sharedCheck: false
     };
     this.updatePriceRange = this.updatePriceRange.bind(this);
     this.updatePriceFilter = this.updatePriceFilter.bind(this);
+    this.updateRoomtype = this.updateRoomtype.bind(this);
+    this.updateRoomFilter = this.updateRoomFilter.bind(this);
   }
 
   updatePriceRange(e) {
@@ -30,6 +35,45 @@ class FilterForm extends React.Component {
     this.props.updateFilter("priceRange", priceRange);
   }
 
+  updateRoomtype(e) {
+    if (e.target.value === "shared") {
+      this.setState(
+        { sharedCheck: !this.state.sharedCheck },
+        this.updateRoomFilter
+      );
+    } else if (e.target.value === "whole") {
+      this.setState(
+        { wholeCheck: !this.state.wholeCheck },
+        this.updateRoomFilter
+      );
+    } else {
+      this.setState(
+        { privateCheck: !this.state.privateCheck },
+        this.updateRoomFilter
+      );
+    }
+  }
+
+  updateRoomFilter () {
+
+    let roomtypes = [];
+    if (this.state.sharedCheck) {
+      roomtypes.push("shared");
+    }
+    if (this.state.wholeCheck) {
+      roomtypes.push("whole");
+    }
+    if (this.state.privateCheck) {
+      roomtypes.push("private");
+    }
+    if (roomtypes.length === 0) {
+      roomtypes = ["shared", "whole", "private"];
+    }
+    this.props.updateFilter("roomtype", roomtypes);
+    roomtypes = [];
+  }
+
+
   render() {
     let minPrice = `$${this.state.min}`;
     let maxPrice = (this.state.max === 1000) ? "$1,000+" : `$${this.state.max}`;
@@ -41,17 +85,23 @@ class FilterForm extends React.Component {
             <div className="checkbox">
               <input
                 type="checkbox"
-                value="whole"/>
+                value="whole"
+                checked={this.state.wholeCheck}
+                onChange={this.updateRoomtype}/>
             </div>
             <div className="checkbox">
               <input
                 type="checkbox"
-                value="private"/>
+                value="private"
+                checked={this.state.privateCheck}
+                onChange={this.updateRoomtype}/>
             </div>
             <div className="checkbox">
               <input
                 type="checkbox"
-                value="shared"/>
+                value="shared"
+                checked={this.state.sharedCheck}
+                onChange={this.updateRoomtype}/>
             </div>
           </div>
         </div>
