@@ -1,6 +1,10 @@
 import React from 'react';
 
 class WelcomeForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.welcomeSubmit = this.welcomeSubmit.bind(this);
+  }
 
   componentDidMount() {
     const defaultBounds = new google.maps.LatLngBounds(
@@ -17,6 +21,16 @@ class WelcomeForm extends React.Component {
     this.autocomplete = autocomplete;
   }
 
+  welcomeSubmit(e) {
+    e.preventDefault();
+    let roomtypeSelector = document.getElementById("roomtype-selector");
+    let guestsSelector = document.getElementById("guests-selector");
+    let locationSelector = document.getElementById("form-search-input");
+    this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
+    this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
+    this.props.updateField(locationSelector.name, locationSelector.value);
+  }
+
   render() {
     return (
       <div className="host-form">
@@ -26,13 +40,13 @@ class WelcomeForm extends React.Component {
           </p>
           <p>STEP 1</p>
           <p>What kind of place do you have?</p>
-          <form>
-            <select name="roomtype" className="spot-form-input form-dropdown">
+          <form onSubmit={this.welcomeSubmit}>
+            <select name="roomtype" className="spot-form-input form-dropdown" id="roomtype-selector">
               <option value="whole">Entire home/apt</option>
               <option value="private">Private room</option>
               <option value="shared">Shared room</option>
             </select>
-            <select name="num-guests" className="spot-form-input form-dropdown">
+            <select name="guests" className="spot-form-input form-dropdown" id="guests-selector">
               <option value={1}>for 1 guest</option>
               <option value={2}>for 2 guests</option>
               <option value={3}>for 3 guests</option>
@@ -53,9 +67,11 @@ class WelcomeForm extends React.Component {
             <br />
             <input
               type="text"
+              name="location"
               className="form-search spot-form-input"
               id="form-search-input"
               placeholder="e.g. New York City" />
+            <input type="submit" value="Continue" className="welcome-submit" />
           </form>
         </div>
         <div className="host-form-image">

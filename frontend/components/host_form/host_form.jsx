@@ -8,7 +8,8 @@ class HostForm extends React.Component {
   renderChildren() {
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        currentUser: this.props.currentUser
+        currentUser: this.props.currentUser,
+        updateField: this.props.updateField
       });
     });
   }

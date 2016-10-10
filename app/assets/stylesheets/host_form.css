@@ -32,5 +32,12 @@
 .form-dropdown {
   background: transparent;
   width: 50%;
+}
 
+.welcome-submit {
+  background: rgb(0, 166, 153);
+  color: white;
+  padding: 10px 22px;
+  border: 1px solid rgb(0, 166, 153);
+  border-radius: 3px;
 }
