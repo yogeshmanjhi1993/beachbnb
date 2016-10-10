@@ -6,6 +6,7 @@ import HomeContainer from './home_container/home_container';
 import SearchResultsContainer from './search_results/search_results_container';
 import HostFormContainer from './host_form/host_form_container';
 import WelcomeForm from './host_form/welcome_form';
+import RoomForm from './host_form/room_form';
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -15,6 +16,7 @@ const Root = ({ store }) => (
         <Route component={SearchResultsContainer} path="search" />
         <Route component={HostFormContainer} path="host">
           <IndexRoute component={WelcomeForm} />
+          <Route component={RoomForm} path="/room" />
         </Route>
       </Route>
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class WelcomeForm extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class WelcomeForm extends React.Component {
     this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
     this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
     this.props.updateField(locationSelector.name, locationSelector.value);
+    hashHistory.push("/room");
   }
 
   render() {
