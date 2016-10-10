@@ -23,8 +23,6 @@ class Home extends React.Component {
     this.autocomplete = autocomplete;
   }
 
-
-
   searchSubmit(e) {
     e.preventDefault();
     if (this.autocomplete.getPlace()) {

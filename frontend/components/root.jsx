@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import HomeContainer from './home_container/home_container';
 import SearchResultsContainer from './search_results/search_results_container';
+import HostFormContainer from './host_form/host_form_container';
+import WelcomeForm from './host_form/welcome_form';
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -11,6 +13,9 @@ const Root = ({ store }) => (
       <Route path='/' component={App}>
         <IndexRoute component={HomeContainer} />
         <Route component={SearchResultsContainer} path="search" />
+        <Route component={HostFormContainer} path="host">
+          <IndexRoute component={WelcomeForm} />
+        </Route>
       </Route>
     </Router>
   </Provider>

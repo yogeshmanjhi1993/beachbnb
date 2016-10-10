@@ -20,6 +20,8 @@ class Navbar extends React.Component {
     this.closeSignupModal = this.closeSignupModal.bind(this);
     this.loggedInButtons = this.loggedInButtons.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
+    this.toHostForm = this.toHostForm.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   componentDidMount() {
@@ -58,7 +60,7 @@ class Navbar extends React.Component {
   loggedOutButtons(){
     return (
       <ul className='nav-buttons group'>
-        <li><button className="nav-create-host">Become a Host</button></li>
+        <li onClick={this.toHostForm}><button className="nav-create-host">Become a Host</button></li>
         <li><button className="nav-help">Help</button></li>
         <li onClick={this.openSignupModal}><button className="nav-signup">Sign Up</button></li>
         <li onClick={this.openLoginModal}><button className="nav-login">Log In</button></li>
@@ -69,22 +71,36 @@ class Navbar extends React.Component {
   loggedInButtons(currentUser) {
     return (
       <ul className='nav-buttons group'>
-        <li><button className="nav-create-host">Become a Host</button></li>
+        <li onClick={this.toHostForm}><button className="nav-create-host">Become a Host</button></li>
         <li><button className="nav-trips">Trips</button></li>
         <li><button className="nav-messages">Messages</button></li>
         <li><button className="nav-help">Help</button></li>
         <li className="nav-user-info">
           <button>{currentUser.fname}</button>
           <ul className="profile-dropdown">
-            <li onClick={this.props.logout} className="dropdown-logout"><button className="nav-logout">Log Out</button></li>
+            <li onClick={this.handleLogout} className="dropdown-logout"><button className="nav-logout">Log Out</button></li>
           </ul>
         </li>
       </ul>
     );
   }
 
+  handleLogout() {
+    this.returnToHome();
+    this.props.logout();
+  }
+
   returnToHome() {
     hashHistory.push("/");
+  }
+
+  toHostForm() {
+    if (this.props.currentUser) {
+      hashHistory.push("/host");
+    } else {
+      this.openLoginModal();
+      this.toHostForm();
+    }
   }
 
   searchSubmit(e) {
