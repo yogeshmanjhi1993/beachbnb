@@ -24,6 +24,12 @@ class User < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :bookings,
+    class_name: "Booking",
+    foreign_key: :guest_id,
+    primary_key: :id,
+    dependent: :destroy
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, pw)
