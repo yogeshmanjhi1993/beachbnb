@@ -6,7 +6,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.searchSubmit = this.searchSubmit.bind(this);
-
   }
 
   componentDidMount() {
@@ -28,13 +27,18 @@ class Home extends React.Component {
 
   searchSubmit(e) {
     e.preventDefault();
-    const searchLocation = this.autocomplete.getPlace().geometry.location;
-    const mapCenter = { lat: searchLocation.lat(),
-                        lng: searchLocation.lng() };
-    hashHistory.push({
-      pathname: '/search',
-      query: mapCenter
-    });
+    if (this.autocomplete.getPlace()) {
+      const searchLocation = this.autocomplete.getPlace().geometry.location;
+      const mapCenter = {
+        name: this.autocomplete.getPlace().formatted_address,
+        lat: searchLocation.lat(),
+        lng: searchLocation.lng()
+      };
+      this.props.updateLocation(mapCenter);
+      hashHistory.push({
+        pathname: '/search'
+      });
+    }
   }
 
   render() {

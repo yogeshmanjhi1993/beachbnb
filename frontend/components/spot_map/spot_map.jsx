@@ -2,6 +2,10 @@ import React from 'react';
 import MarkerManager from '../../util/marker_manager';
 
 class SpotMap extends React.Component {
+  constructor(props) {
+    super(props);
+    this._registerListeners = this._registerListeners.bind(this);
+  }
 
   getQueryParameters() {
     return document.location.hash.slice(9)
@@ -20,11 +24,10 @@ class SpotMap extends React.Component {
       center: { lat: -16.498855, lng: -151.741460 },
       zoom: 13
     };
-    const queryOptions = this.getQueryParameters();
-    const queryCenter = { center:
-      { lat: parseFloat(queryOptions.lat), lng: parseFloat(queryOptions.lng) }
+    const newCenter = { center:
+      { lat: this.props.location.lat, lng: this.props.location.lng }
     };
-    Object.assign(mapOptions, queryCenter);
+    Object.assign(mapOptions, newCenter);
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this._registerListeners();
@@ -32,6 +35,8 @@ class SpotMap extends React.Component {
   }
 
   componentDidUpdate() {
+    const newCenter = { lat: this.props.location.lat, lng: this.props.location.lng };
+    this.map.setCenter(newCenter);
     this.MarkerManager.updateMarkers(this.props.spots);
   }
 
@@ -42,6 +47,8 @@ class SpotMap extends React.Component {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
+      const center = { lat: this.map.center.lat(), lng: this.map.center.lng() };
+      this.props.updateLocation(center);
       this.props.updateFilter('bounds', bounds);
     });
   }

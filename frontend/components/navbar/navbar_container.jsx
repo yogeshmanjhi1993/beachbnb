@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import { logout, clearErrors } from '../../actions/session_actions';
+import { updateLocation } from '../../actions/location_actions';
 import Navbar from './navbar';
 
 const mapStateToProps = state => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  location: state.location
 });
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  updateLocation: (location) => dispatch(updateLocation(location))
 });
 
 const NavbarContainer = connect(

@@ -6,6 +6,7 @@ import { loginModalStyle, signupModalStyle } from './modal_styles';
 import { hashHistory } from 'react-router';
 
 
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,22 @@ class Navbar extends React.Component {
     this.openSignupModal = this.openSignupModal.bind(this);
     this.closeSignupModal = this.closeSignupModal.bind(this);
     this.loggedInButtons = this.loggedInButtons.bind(this);
+    this.searchSubmit = this.searchSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    const defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(-16.560867, -151.804396),
+      new google.maps.LatLng(-16.434973, -151.678022)
+    );
+
+    const navSearch = document.getElementById("navbar-search");
+    const options = {
+      bounds: defaultBounds
+    };
+
+    const autocomplete = new google.maps.places.Autocomplete(navSearch, options);
+    this.autocomplete = autocomplete;
   }
 
   closeLoginModal() {
@@ -70,7 +87,22 @@ class Navbar extends React.Component {
     hashHistory.push("/");
   }
 
-  // TODO: REPLACE SEARCH FORM
+  searchSubmit(e) {
+    e.preventDefault();
+    if (this.autocomplete.getPlace()) {
+      const searchLocation = this.autocomplete.getPlace().geometry.location;
+      const mapCenter = {
+        name: this.autocomplete.getPlace().formatted_address,
+        lat: searchLocation.lat(),
+        lng: searchLocation.lng()
+      };
+      this.props.updateLocation(mapCenter);
+      hashHistory.push({
+        pathname: '/search'
+      });
+    }
+  }
+
   render() {
     const buttons = (this.props.currentUser) ?
       this.loggedInButtons(this.props.currentUser) :
@@ -81,10 +113,15 @@ class Navbar extends React.Component {
         <div className='nav-logo' onClick={this.returnToHome}>
           <i className="fa fa-paper-plane-o" aria-hidden="true"></i> airCLD
         </div>
-        <div className='nav-search'>
+        <form className='nav-search' onSubmit={this.searchSubmit}>
           <i className="fa fa-search" aria-hidden="true"></i>
-          <input type="text" placeholder="Where to?" className="location-search"/>
-        </div>
+          <input
+            type="text"
+            placeholder="Where to?"
+            className="location-search"
+            id="navbar-search"
+            />
+        </form>
         {buttons}
 
         <Modal
