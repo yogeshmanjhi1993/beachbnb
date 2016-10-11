@@ -18,13 +18,11 @@ class RoomForm extends React.Component {
 
   roomSubmit(e) {
     e.preventDefault();
-    // let roomtypeSelector = document.getElementById("roomtype-selector");
-    // let guestsSelector = document.getElementById("guests-selector");
-    // let locationSelector = document.getElementById("form-search-input");
-    // this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
-    // this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
-    // this.props.updateField(locationSelector.name, locationSelector.value);
-    // hashHistory.push("/room");
+    let kindSelector = document.getElementById("kind-selector");
+    this.props.updateField(kindSelector.name, kindSelector.value);
+    this.props.updateField("beds", this.state.beds);
+    this.props.updateField("guests", this.state.guests);
+    hashHistory.push("/location");
   }
 
   bedPlus() {
@@ -66,7 +64,7 @@ class RoomForm extends React.Component {
         <div className="room-form-half">
           <form className="roomtype-form" onSubmit={this.roomSubmit}>
             <h3>What type of property is this?</h3>
-            <select name="kind">
+            <select name="kind" id="kind-selector">
               <option value="apartment">Apartment</option>
               <option value="beach house">Beach House</option>
               <option value="beach bungalow">Beach Bungalow</option>
@@ -74,13 +72,13 @@ class RoomForm extends React.Component {
             <h3>How many guests can your place accommodate?</h3>
             <div className="bed-counter">
               <div>{this.state.beds} {bedText}</div>
-              <button className="bed-minus" onClick={this.bedMinus} disabled={bedMinusDisabled}>-</button>
-              <button className="bed-plus" onClick={this.bedPlus}>+</button>
+              <button type="button" className="bed-minus" onClick={this.bedMinus} disabled={bedMinusDisabled}>-</button>
+              <button type="button" className="bed-plus" onClick={this.bedPlus}>+</button>
             </div>
             <div className="guest-counter">
               <div>{this.state.guests} {guestText}</div>
-              <button className="guest-minus" onClick={this.guestMinus} disabled={guestMinusDisabled}>-</button>
-              <button className="guest-plus" onClick={this.guestPlus}>+</button>
+              <button type="button" className="guest-minus" onClick={this.guestMinus} disabled={guestMinusDisabled}>-</button>
+              <button type="button" className="guest-plus" onClick={this.guestPlus}>+</button>
             </div>
             <input type="submit" value="Next" className="room-submit" />
           </form>

@@ -7,7 +7,6 @@
 #  lat                :float            not null
 #  lng                :float            not null
 #  description        :string           not null
-#  bedrooms           :integer          not null
 #  beds               :integer          not null
 #  roomtype           :string           not null
 #  created_at         :datetime         not null
@@ -21,11 +20,25 @@
 #  guests             :integer          not null
 #  address            :string           not null
 #  kind               :string           not null
+#  country            :string           not null
+#  city               :string           not null
 #
 
 class Spot < ApplicationRecord
-  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name, :price, :guests, :address,
-    presence: true
+  validates :host,
+            :lat,
+            :lng,
+            :description,
+            :beds,
+            :roomtype,
+            :name,
+            :price,
+            :guests,
+            :address,
+            :kind,
+            :country,
+            :city,
+            presence: true
 
   validates :roomtype, inclusion: { in: %w(shared private whole) }
   validates :kind, inclusion: { in: ["apartment", "beach house", "beach bungalow"]}

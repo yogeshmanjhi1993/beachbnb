@@ -7,29 +7,15 @@ class WelcomeForm extends React.Component {
     this.welcomeSubmit = this.welcomeSubmit.bind(this);
   }
 
-  componentDidMount() {
-    const defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(-16.560867, -151.804396),
-      new google.maps.LatLng(-16.434973, -151.678022)
-    );
-
-    const formSearch = document.getElementById("form-search-input");
-    const options = {
-      bounds: defaultBounds
-    };
-
-    const autocomplete = new google.maps.places.Autocomplete(formSearch, options);
-    this.autocomplete = autocomplete;
-  }
-
   welcomeSubmit(e) {
     e.preventDefault();
     let roomtypeSelector = document.getElementById("roomtype-selector");
     let guestsSelector = document.getElementById("guests-selector");
-    let locationSelector = document.getElementById("form-search-input");
+    let nameSelector = document.getElementById("name-input");
     this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
     this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
-    this.props.updateField(locationSelector.name, locationSelector.value);
+    this.props.updateField(nameSelector.name, nameSelector.value);
+    this.props.updateField("host_id", this.props.currentUser.id);
     hashHistory.push("/room");
   }
 
@@ -69,10 +55,10 @@ class WelcomeForm extends React.Component {
             <br />
             <input
               type="text"
-              name="location"
+              name="name"
               className="form-search spot-form-input"
-              id="form-search-input"
-              placeholder="e.g. New York City" />
+              id="name-input"
+              placeholder="e.g. Cool Beach House" />
             <input type="submit" value="Continue" className="welcome-submit" />
           </form>
         </div>
