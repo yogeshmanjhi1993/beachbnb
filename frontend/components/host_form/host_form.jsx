@@ -9,7 +9,9 @@ class HostForm extends React.Component {
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         currentUser: this.props.currentUser,
-        updateField: this.props.updateField
+        updateField: this.props.updateField,
+        spotFields: this.props.spotFields,
+        createSpot: this.props.createSpot
       });
     });
   }

@@ -23,7 +23,6 @@ export const receiveSingleSpot = spot => ({
   spot
 });
 
-export const createSpot = spot => ({
+export const createSpot = () => ({
   type: CREATE_SPOT,
-  spot
 });

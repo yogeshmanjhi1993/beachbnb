@@ -27,7 +27,7 @@ const SpotMiddleware = ({ getState, dispatch }) => next => action => {
       fetchSpot(action.id, spotSuccess);
       break;
     case CREATE_SPOT:
-      createSpot(action.spot, spotSuccess);
+      createSpot(getState().spotFields, spotSuccess);
       break;
     default:
       return next(action);

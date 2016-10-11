@@ -27,13 +27,17 @@ class Api::SpotsController < ApplicationController
     params.require(:spot).permit(:host_id,
                                  :lat,
                                  :lng,
-                                 :bedrooms,
                                  :beds,
                                  :guests,
                                  :roomtype,
                                  :description,
                                  :name,
-                                 :guests,
-                                 :price)
+                                 :price,
+                                 :address,
+                                 :kind,
+                                 :city,
+                                 :country,
+                                 :image
+                                 )
   end
 end

@@ -8,6 +8,7 @@ import HostFormContainer from './host_form/host_form_container';
 import WelcomeForm from './host_form/welcome_form';
 import RoomForm from './host_form/room_form';
 import LocationForm from './host_form/location_form';
+import DescriptionForm from './host_form/description_form';
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -19,6 +20,7 @@ const Root = ({ store }) => (
           <IndexRoute component={WelcomeForm} />
           <Route component={RoomForm} path="/room" />
           <Route component={LocationForm} path="/location" />
+          <Route component={DescriptionForm} path="/description" />
         </Route>
       </Route>
     </Router>

@@ -14,7 +14,8 @@ const _defaultFields = {
   address: "",
   kind: "",
   city: "",
-  country: ""
+  country: "",
+  image: ""
 };
 
 const SpotformReducer = (state = _defaultFields, action) => {

@@ -53,7 +53,7 @@ class LocationForm extends React.Component {
     this.props.updateField("city", this.state.locality);
     this.props.updateField("lat", this.state.lat);
     this.props.updateField("lng", this.state.lng);
-    // hashHistory.push("/description");
+    hashHistory.push("/description");
   }
 
   render() {
