@@ -1,10 +1,14 @@
+#root {
+  height: 100%;
+}
+
 .home-page {
   background-image: asset-url("modern2.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1000px;
+  height: 100%;
   width: 100%;
   background-color: rgb(12, 14, 13);
   margin-top: 65px;
@@ -15,8 +19,14 @@
 
 }
 
+.app-div {
+  height: 100vh;
+  overflow: auto;
+}
+
 .heading-box {
   width: 60%;
+  height: 100%;
   max-width: 1080px;
   display: flex;
   flex-direction: column;
@@ -36,7 +46,7 @@
   width: 450px;
 }
 
-.home-search-listings {
+.home-body {
   box-sizing: border-box;
   width: 100%;
   max-width: 1080px;
@@ -55,4 +65,128 @@
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
+}
+
+.explore-world {
+  height: 60%;
+  padding-top: 30px;
+}
+
+.explore-box {
+  width: 100%;
+  margin: 10px;
+}
+
+.card {
+  background-size: cover;
+  position: relative;
+}
+
+.card p {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+
+}
+
+.explore-items {
+  height: 100%;
+}
+
+.explore-box2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.explore-box3 {
+  width: 25%;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.explore-box4 {
+  width: 50%;
+
+}
+
+.explore-box5 {
+  width: 25%;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box1-card {
+  height: 100%;
+  width: 100%;
+}
+
+.box2-card {
+  height: 48%;
+  width: 48%;
+}
+
+.box3-card {
+  height: 48%;
+  width: 100%;
+}
+
+.box4-card {
+  height: 100%;
+  width: 100%;
+}
+
+.box5-card {
+  height: 48%;
+  width: 100%;
+}
+
+.explore-row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.hawaii {
+  background-image: asset-url("hawaiicard.jpg");
+}
+
+.bora {
+  background-image: asset-url("boraboracard.jpg");
+}
+
+.seychelles {
+  background-image: asset-url("seychellescard.jpg");
+}
+
+.puerto {
+  background-image: asset-url("puertocard.jpg");
+}
+
+.thailand {
+  background-image: asset-url("thaicard.jpg");
+}
+
+.mexico {
+  background-image: asset-url("mexicocard.jpg");
+}
+
+.bali {
+  background-image: asset-url("balicard.jpg");
+}
+
+.maldives {
+  background-image: asset-url("maldivescard.jpg");
+}
+
+.fiji {
+  background-image: asset-url("fijicard.jpg");
+}
+
+.cayman {
+  background-image: asset-url("caymancard.jpg");
 }

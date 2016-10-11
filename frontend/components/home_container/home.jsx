@@ -48,7 +48,7 @@ class Home extends React.Component {
             Book homes from local hosts and experience a place like you live there
           </h3>
         </heading>
-        <div className="home-search-listings">
+        <div className="home-body">
           <h2 className="search-heading">
             Search over 2 million homes in over 190 countries
           </h2>
@@ -60,6 +60,35 @@ class Home extends React.Component {
               id="homepage-search"
               />
           </form>
+          <div className="explore-world" >
+            <h3>Explore the world</h3>
+            <div className="explore-items">
+              <div className="explore-row">
+                <div className="explore-box1 explore-box">
+                  <div className="box1-card card hawaii"><p>Hawaii</p></div>
+                </div>
+                <div className="explore-box2 explore-box">
+                  <div className="box2-card card bora"><p>Bora Bora</p></div>
+                  <div className="box2-card card seychelles"><p>Seychelles</p></div>
+                  <div className="box2-card card puerto"><p>Puerto Rico</p></div>
+                  <div className="box2-card card thailand"><p>Thailand</p></div>
+                </div>
+              </div>
+              <div className="explore-row">
+                <div className="explore-box3 explore-box">
+                  <div className="box3-card card mexico"><p>Mexico</p></div>
+                  <div className="box3-card card bali"><p>Bali</p></div>
+                </div>
+                <div className="explore-box4 explore-box">
+                  <div className="box4-card card maldives"><p>Maldives</p></div>
+                </div>
+                <div className="explore-box5 explore-box">
+                  <div className="box5-card card fiji"><p>Fiji</p></div>
+                  <div className="box5-card card cayman"><p>Cayman Islands</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     );

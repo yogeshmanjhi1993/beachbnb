@@ -32,7 +32,7 @@ export const createSpot = (spot, success) => {
   formData.append("spot[city]", spot.city);
   formData.append("spot[country]", spot.country);
   formData.append("spot[image]", spot.image);
-  debugger
+  
   $.ajax({
     method: "POST",
     url: 'api/spots',
