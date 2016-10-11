@@ -4,6 +4,11 @@ import { hashHistory } from 'react-router';
 class SpotIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.redirectToSpotShow = this.redirectToSpotShow.bind(this);
+  }
+
+  redirectToSpotShow(e) {
+    hashHistory.push(`/spots/${this.props.spot.id}`);
   }
 
   render() {
@@ -20,7 +25,7 @@ class SpotIndexItem extends React.Component {
     let guestText = (spot.guests === 1) ? "guest" : "guests";
 
     return (
-      <div className="spot-index-item">
+      <div className="spot-index-item" onClick={this.redirectToSpotShow}>
         <div className="image-item-div">
           <img src={spot.image} alt="spot image" className="index-item-img" />
           <p className="spot-price">${spot.price}</p>

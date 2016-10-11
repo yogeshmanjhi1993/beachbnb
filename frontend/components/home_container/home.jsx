@@ -146,7 +146,7 @@ class Home extends React.Component {
                     className="box3-card card mexico"
                     data-name="mexico"
                     onClick={this.cardClick} >
-                    <p>Mexico</p>
+                    <p>Cancun</p>
                   </div>
                   <div
                     className="box3-card card bali"

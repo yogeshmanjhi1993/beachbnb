@@ -1,5 +1,5 @@
 .home-page {
-  background-image: asset-url("modern2.jpg");
+  background-image: asset-url("beachbg.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -14,10 +14,6 @@
   align-items: center;
 }
 
-.app-div {
-
-}
-
 .heading-box {
   width: 60%;
   height: 40%;
@@ -26,11 +22,11 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  margin: 65px auto 130px auto;
+  margin: 200px auto 130px auto;
 }
 
 .main-heading {
-  margin-top: 110px;
+
   font-size: 44px;
 }
 
