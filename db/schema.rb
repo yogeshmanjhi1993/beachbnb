@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011014958) do
+ActiveRecord::Schema.define(version: 20161011125759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20161011014958) do
     t.integer  "guests",             null: false
     t.string   "address",            null: false
     t.string   "kind",               null: false
+    t.string   "country",            null: false
+    t.string   "city",               null: false
     t.index ["host_id"], name: "index_spots_on_host_id", using: :btree
   end
 
