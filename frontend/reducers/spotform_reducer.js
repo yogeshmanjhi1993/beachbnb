@@ -12,7 +12,9 @@ const _defaultFields = {
   beds: "",
   roomtype: "",
   price: "",
-  location: ""
+  location: "",
+  address: "",
+  kind: ""
 };
 
 const SpotformReducer = (state = _defaultFields, action) => {

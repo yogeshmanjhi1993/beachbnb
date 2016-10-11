@@ -19,13 +19,16 @@
 #  name               :string           not null
 #  price              :integer          not null
 #  guests             :integer          not null
+#  address            :string           not null
+#  kind               :string           not null
 #
 
 class Spot < ApplicationRecord
-  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name, :price, :guests,
+  validates :host, :lat, :lng, :description, :bedrooms, :beds, :roomtype, :name, :price, :guests, :address,
     presence: true
 
   validates :roomtype, inclusion: { in: %w(shared private whole) }
+  validates :kind, inclusion: { in: ["apartment", "beach house", "beach bungalow"]}
 
   has_attached_file :image, default_url: "modern2.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

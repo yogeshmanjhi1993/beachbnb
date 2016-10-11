@@ -19,6 +19,8 @@
 #  name               :string           not null
 #  price              :integer          not null
 #  guests             :integer          not null
+#  address            :string           not null
+#  kind               :string           not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -37,9 +37,9 @@ class WelcomeForm extends React.Component {
     return (
       <div className="host-form">
         <div className="host-form-half">
-          <p className="host-form-first-heading">
+          <h2 className="host-form-first-heading">
             Hi {this.props.currentUser.fname}! Let's get you ready to become a host.
-          </p>
+          </h2>
           <p>STEP 1</p>
           <p>What kind of place do you have?</p>
           <form onSubmit={this.welcomeSubmit}>
