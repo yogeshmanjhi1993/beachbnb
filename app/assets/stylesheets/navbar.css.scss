@@ -115,6 +115,10 @@
   z-index: 1000;
 }
 
+.trips-dropdown:empty {
+  border: none;
+}
+
 .trips-dropdown li {
   width: 300px;
   height: 85px;
