@@ -41,11 +41,6 @@ class Navbar extends React.Component {
     }
   }
 
-  componentWillUpdate(nextProps) {
-    if (nextProps.currentUser) {
-      this.props.requestBookings(nextProps.currentUser.id);
-    }
-  }
 
 
 

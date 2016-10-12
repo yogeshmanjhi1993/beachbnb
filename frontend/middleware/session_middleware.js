@@ -6,11 +6,13 @@ import { receiveCurrentUser,
        } from '../actions/session_actions';
 
 import { login, signup, logout } from '../util/session_api_util';
+import { requestBookings } from '../actions/booking_actions';
 
 const SessionMiddleware = ({ getState, dispatch }) => next => action => {
   const success = user => {
     action.callback();
     dispatch(receiveCurrentUser(user));
+    dispatch(requestBookings(user.id));
   };
 
   const error = res => dispatch(receiveErrors(res.responseJSON));
