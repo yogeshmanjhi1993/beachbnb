@@ -13,16 +13,18 @@
   top: 0;
   width: 100%;
   background: white;
-  /*z-index: 1;*/
 }
 
 .nav-logo {
+  background-image: asset-url("logo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: block;
   width: 165px;
+  height: auto;
   border-right: 2px solid #ccc;
   padding: 19px 20px;
-  font-size: 18px;
-  color: rgb(34, 156, 189);
 }
 
 .nav-search {
@@ -36,20 +38,30 @@
   display: flex;
 }
 
+.nav-buttons button {
+  cursor: pointer;
+}
+
 .nav-buttons > li {
   padding: 22px 20px;
   border-right: 1px solid #ccc;
   font-size: 13px;
-  color: rgb(65, 65, 65)
+  color: rgb(65, 65, 65);
+  cursor: pointer;
 }
 
 .nav-buttons > li:first-child {
   padding: 17px 15px;
 }
 
-.nav-buttons > li:hover,
-.nav-logo:hover {
+.nav-buttons > li:hover {
   background: rgb(245, 245, 245);
+
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .profile-dropdown {

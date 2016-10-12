@@ -127,7 +127,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <div className='nav-logo' onClick={this.returnToHome}>
-          <i className="fa fa-paper-plane-o" aria-hidden="true"></i> beachbnb
+          
         </div>
         <form className='nav-search' onSubmit={this.searchSubmit}>
           <i className="fa fa-search" aria-hidden="true"></i>

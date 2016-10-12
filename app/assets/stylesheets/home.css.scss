@@ -4,7 +4,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 65px);
   width: 100%;
   background-color: rgb(12, 14, 13);
   margin-top: 65px;
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  margin: 200px auto 130px auto;
+  margin: 165px auto 130px auto;
 }
 
 .main-heading {
@@ -60,6 +60,8 @@
 .explore-world {
   height: 60%;
   padding-top: 30px;
+
+
 }
 
 .explore-box {
@@ -71,6 +73,7 @@
 .card {
   background-size: cover;
   position: relative;
+  cursor: pointer;
 
 }
 
@@ -79,7 +82,6 @@
   bottom: 15px;
   left: 15px;
   color: white;
-
 }
 
 .explore-items {
@@ -106,7 +108,7 @@
 }
 
 .explore-box5 {
-  width: 25%;
+  width: 24%;
   display: flex;
   align-content: space-between;
   flex-wrap: wrap;
