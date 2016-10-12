@@ -12,6 +12,11 @@ class Api::BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def index
+    @bookings = Booking.where(guest_id: params[:guest_id])
+  end
+
+
   private
 
   def booking_params

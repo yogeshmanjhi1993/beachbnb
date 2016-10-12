@@ -4,8 +4,7 @@ import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
 import { loginModalStyle, signupModalStyle } from './modal_styles';
 import { hashHistory } from 'react-router';
-
-
+import MONTHS from '../../util/month_list';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -37,6 +36,7 @@ class Navbar extends React.Component {
 
     const autocomplete = new google.maps.places.Autocomplete(navSearch, options);
     this.autocomplete = autocomplete;
+    this.props.requestBookings(this.props.currentUser.id);
   }
 
   closeLoginModal() {
@@ -69,10 +69,34 @@ class Navbar extends React.Component {
   }
 
   loggedInButtons(currentUser) {
+    const bookingsArray = Object.keys(this.props.bookings).map(key => this.props.bookings[key]);
+    const trips = bookingsArray.map((booking) => {
+      let start = new Date(booking.start_date);
+      let end = new Date(booking.end_date);
+      return (
+        <li key={booking.id}>
+          <div>
+            <p className="booking-city">
+              {booking.spot.city}
+            </p>
+            <p className="booking-dates">
+              {MONTHS[start.getMonth()]} {start.getDate()} - {MONTHS[end.getMonth()]} {end.getDate()}
+            </p>
+          </div>
+          <img src={booking.spot.image} alt="booking image" className="booking-dropdown-image" />
+        </li>
+      );
+    });
+
     return (
       <ul className='nav-buttons group'>
         <li onClick={this.toHostForm}><button className="nav-create-host">Become a Host</button></li>
-        <li><button className="nav-trips">Trips</button></li>
+        <li className="nav-trips">
+          <button>Trips</button>
+          <ul className="trips-dropdown">
+            {trips}
+          </ul>
+        </li>
         <li><button className="nav-messages">Messages</button></li>
         <li><button className="nav-help">Help</button></li>
         <li className="nav-user-info">
@@ -127,7 +151,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <div className='nav-logo' onClick={this.returnToHome}>
-          
+
         </div>
         <form className='nav-search' onSubmit={this.searchSubmit}>
           <i className="fa fa-search" aria-hidden="true"></i>
