@@ -5,13 +5,15 @@ import SpotsReducer from './spots_reducer';
 import FiltersReducer from './filters_reducer';
 import LocationReducer from './location_reducer';
 import SpotformReducer from './spotform_reducer';
+import BookingReducer from './booking_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   spots: SpotsReducer,
   filters: FiltersReducer,
   location: LocationReducer,
-  spotFields: SpotformReducer
+  spotFields: SpotformReducer,
+  bookings: BookingReducer
 });
 
 export default RootReducer;

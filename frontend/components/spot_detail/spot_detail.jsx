@@ -47,7 +47,15 @@ class SpotDetail extends React.Component {
   }
 
   handleBooking() {
-    
+    const booking = {
+      booking: {
+        guest_id: this.props.currentUser.id,
+        spot_id: this.spot.id,
+        start_date: this.state.startDate.toDate(),
+        end_date: this.state.endDate.toDate()
+      }
+    };
+    this.props.createBooking(booking);
   }
 
   render() {
