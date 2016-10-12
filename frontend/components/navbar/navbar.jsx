@@ -36,8 +36,18 @@ class Navbar extends React.Component {
 
     const autocomplete = new google.maps.places.Autocomplete(navSearch, options);
     this.autocomplete = autocomplete;
-    this.props.requestBookings(this.props.currentUser.id);
+    if (this.props.currentUser) {
+      this.props.requestBookings(this.props.currentUser.id);
+    }
   }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.currentUser) {
+      this.props.requestBookings(nextProps.currentUser.id);
+    }
+  }
+
+
 
   closeLoginModal() {
     this.setState({ loginModalOpen: false });
@@ -91,7 +101,7 @@ class Navbar extends React.Component {
     return (
       <ul className='nav-buttons group'>
         <li onClick={this.toHostForm}><button className="nav-create-host">Become a Host</button></li>
-        <li className="nav-trips">
+        <li className="nav-trips" id="nav-trips-li">
           <button>Trips</button>
           <ul className="trips-dropdown">
             {trips}
