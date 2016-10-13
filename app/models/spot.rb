@@ -57,6 +57,9 @@ class Spot < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :reviews,
+    dependent: :destroy
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
         .where("lat > ?", bounds[:southWest][:lat])

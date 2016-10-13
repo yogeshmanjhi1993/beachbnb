@@ -1,6 +1,7 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
 import { hashHistory } from 'react-router';
+import ReviewContainer from '../reviews/review_container';
 
 class SpotDetail extends React.Component {
   constructor(props) {
@@ -39,6 +40,20 @@ class SpotDetail extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const bookingBox = $('.booking-box');
+    const boxTopPos = bookingBox.offset().top;
+    const win = $(window);
+    win.scroll((e) => {
+      let scrollTop = win.scrollTop();
+      if (scrollTop >= boxTopPos - 50) {
+        bookingBox.css({position: 'fixed', top:"0", right:'10%', marginTop: "65px"});
+      } else if (bookingBox.css('position') === 'fixed') {
+        bookingBox.css({position: "", top: "", marginTop: '-52px'});
+      }
+    });
+  }
+
   onDatesChange({ startDate, endDate }) {
     this.setState({ startDate, endDate });
   }
@@ -57,7 +72,7 @@ class SpotDetail extends React.Component {
       }
     };
     this.props.createBooking(booking);
-    
+
   }
 
   render() {
@@ -134,7 +149,9 @@ class SpotDetail extends React.Component {
 
               </ul>
             </div>
-
+          </div>
+          <div className="reviews">
+            <ReviewContainer spot={this.spot}/>
           </div>
         </div>
       </div>

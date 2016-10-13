@@ -30,6 +30,9 @@ class User < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :reviews
+
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, pw)
