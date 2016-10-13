@@ -1,3 +1,79 @@
 .booking-detail-page {
-  margin-top: 65px;
+  margin: 65px auto 0 auto;
+  width: 1030px;
+  padding-top: 55px;
+}
+
+.booking-detail-page h1 {
+  font-size: 30px;
+  color: #484848;
+  margin-bottom: 35px;
+}
+
+.booking-attributes {
+  border: 1px solid #ccc;
+  width: 502px;
+  padding: 40px 40px 0 40px;
+}
+
+.booking-attributes h4 {
+  margin-top: 0;
+  color: #484848;
+  font-size: 15px;
+}
+
+.booking-attributes p {
+  font-size: 14px;
+  color: #484848;
+}
+
+.check-details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.check-in, .check-out {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.address {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.address h4 {
+  width: 27%;
+}
+
+.address-details {
+  margin-bottom: 20px;
+}
+
+.billing {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.billing h4 {
+  width: 27%;
+}
+
+.billing-details {
+  margin-bottom: 20px;
+}
+
+.booking-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot-image {
+  width: 423px;
+  height: 275px;
 }

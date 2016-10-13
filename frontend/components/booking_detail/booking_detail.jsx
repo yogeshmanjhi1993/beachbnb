@@ -23,29 +23,36 @@ class BookingDetail extends React.Component {
   render() {
     return (
       <div className="booking-detail-page">
-        <h1>You're going to {this.spot.city}</h1>
-        <div className="booking-attributes" >
-          <div className="check-details">
-            <div className="check-in">
-              <h4>Check In</h4>
-              <p>{DAYS[this.startDate.getDay()]}, {MONTHS[this.startDate.getMonth()]} {this.startDate.getDate()}</p>
+        <h1>You're going to {this.spot.city}!</h1>
+        <div className="booking-boxes">
+          <div className="booking-attributes" >
+            <div className="check-details">
+              <div className="check-in">
+                <h4>Check In</h4>
+                <p>{DAYS[this.startDate.getDay()]}, {MONTHS[this.startDate.getMonth()]} {this.startDate.getDate()}</p>
+              </div>
+              <div className="check-out">
+                <h4>Check Out</h4>
+                <p>{DAYS[this.endDate.getDay()]}, {MONTHS[this.endDate.getMonth()]} {this.endDate.getDate()}</p>
+              </div>
             </div>
-            <div className="check-out">
-              <h4>Check Out</h4>
-              <p>{DAYS[this.endDate.getDay()]}, {MONTHS[this.endDate.getMonth()]} {this.endDate.getDate()}</p>
+            <div className="address" >
+              <h4>Address</h4>
+              <div className="address-details">
+                <p>{this.spot.address}</p>
+                <p>{this.spot.city}</p>
+                <p>{this.spot.country}</p>
+              </div>
+            </div>
+            <div className="billing" >
+              <h4>Billing</h4>
+              <div className="billing-details">
+                <p>{this.nights} nights total</p>
+                <p>${this.spot.price * this.nights}</p>
+              </div>
             </div>
           </div>
-          <div className="address" >
-            <h4>Address</h4>
-            <p>{this.spot.address}</p>
-            <p>{this.spot.city}</p>
-            <p>{this.spot.country}</p>
-          </div>
-          <div className="billing" >
-            <h4>Billing</h4>
-            <p>{this.nights} nights total</p>
-            <p>${this.spot.price * this.nights}</p>
-          </div>
+          <img src={this.spot.image} className="spot-image"/>
         </div>
 
       </div>
