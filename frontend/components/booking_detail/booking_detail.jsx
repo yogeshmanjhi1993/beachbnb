@@ -9,7 +9,15 @@ class BookingDetail extends React.Component {
     this.spot = this.booking.spot;
     this.startDate = new Date(this.booking.start_date);
     this.endDate = new Date(this.booking.end_date);
-    this.nights = (this.endDate - this.startDate) / 86400000;
+    this.nights = Math.floor((this.endDate - this.startDate) / 86400000);
+  }
+
+  componentWillUpdate(nextProps) {
+    this.booking = this.props.bookings[nextProps.params.id];
+    this.spot = this.booking.spot;
+    this.startDate = new Date(this.booking.start_date);
+    this.endDate = new Date(this.booking.end_date);
+    this.nights = Math.floor((this.endDate - this.startDate) / 86400000);
   }
 
   render() {

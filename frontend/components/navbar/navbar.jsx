@@ -41,9 +41,6 @@ class Navbar extends React.Component {
     }
   }
 
-
-
-
   closeLoginModal() {
     this.setState({ loginModalOpen: false });
     this.props.clearErrors();
@@ -60,6 +57,10 @@ class Navbar extends React.Component {
 
   openSignupModal() {
     this.setState({ signupModalOpen: true });
+  }
+
+  toBookingDetail(e) {
+    hashHistory.push(`/bookings/${e.currentTarget.dataset.id}`);
   }
 
   loggedOutButtons(){
@@ -79,7 +80,7 @@ class Navbar extends React.Component {
       let start = new Date(booking.start_date);
       let end = new Date(booking.end_date);
       return (
-        <li key={booking.id}>
+        <li key={booking.id} onClick={this.toBookingDetail} data-id={booking.id}>
           <div>
             <p className="booking-city">
               {booking.spot.city}
