@@ -10,10 +10,12 @@
 #  email           :string           not null
 #  fname           :string           not null
 #  lname           :string           not null
+#  uid             :string
+#  provider        :string
 #
 
 class User < ApplicationRecord
-  validates :email, :fname, :lname, :password_digest, :session_token, presence: true
+  validates :email, :fname, :lname, :session_token, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   attr_reader :password
@@ -42,6 +44,17 @@ class User < ApplicationRecord
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.fname = auth.info.first_name
+      user.lname = auth.info.last_name
+      user.email = auth.info.email
+      user.save!
+    end
   end
 
   def password=(pw)

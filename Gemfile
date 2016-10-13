@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'paperclip', '~> 5.0.0.beta1'
 gem 'aws-sdk', '>=2.0'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

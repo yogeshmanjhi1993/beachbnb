@@ -10,6 +10,8 @@
 #  email           :string           not null
 #  fname           :string           not null
 #  lname           :string           not null
+#  uid             :string
+#  provider        :string
 #
 
 require 'test_helper'
