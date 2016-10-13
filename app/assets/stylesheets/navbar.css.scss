@@ -125,9 +125,14 @@
   background: white;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 15px 15px 15px 15px;
+  transition: padding 0.5s;
   align-items: center;
   border-bottom: 1px solid #ccc;
+}
+
+.trips-dropdown li:hover {
+  padding: 15px 15px 15px 20px;
 }
 
 .trips-dropdown li:last-child {

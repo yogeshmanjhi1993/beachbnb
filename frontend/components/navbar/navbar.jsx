@@ -4,7 +4,7 @@ import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
 import { loginModalStyle, signupModalStyle } from './modal_styles';
 import { hashHistory } from 'react-router';
-import MONTHS from '../../util/month_list';
+import { MONTHS } from '../../util/month_list';
 
 class Navbar extends React.Component {
   constructor(props) {

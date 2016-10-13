@@ -1,5 +1,6 @@
 import React from 'react';
 import { DateRangePicker } from 'react-dates';
+import { hashHistory } from 'react-router';
 
 class SpotDetail extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class SpotDetail extends React.Component {
       }
     };
     this.props.createBooking(booking);
+    
   }
 
   render() {
@@ -116,6 +118,23 @@ class SpotDetail extends React.Component {
                 <p>You won't be charged ... ever</p>
               </div>
             </div>
+          </div>
+          <div className="spot-detail-description">
+            <div className="spot-description-header">
+              <h3>About this listing</h3>
+              <p>{this.spot.description}</p>
+            </div>
+            <div className="spot-section-header">
+              <h3>The Space</h3>
+              <ul>
+                <li>Accomodates: {this.spot.guests}</li>
+                <li>Beds: {this.spot.beds}</li>
+                <li>Property type: {this.spot.kind.toUpperCase()}</li>
+                <li>Price: ${this.spot.price}</li>
+
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
