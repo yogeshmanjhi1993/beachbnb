@@ -38,8 +38,17 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-div" onSubmit={this.handleSubmit}>
-        <form className="signup-form-box">
+      <div className="signup-form-div" >
+        <a href="/auth/google_oauth2/" className="google-link">
+          <div className="google-logo"></div>
+          <p>Sign up with Google</p>
+        </a>
+        <div className="separator">
+          <div className="separator-line"> </div>
+          <p>or</p>
+          <div className="separator-line"> </div>
+        </div>
+        <form className="signup-form-box" onSubmit={this.handleSubmit}>
           { this.renderErrors() }
           <div className="input-item">
             <input type="text"

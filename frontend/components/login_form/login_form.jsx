@@ -43,6 +43,15 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form-div" onSubmit={this.handleSubmit}>
+        <a href="/auth/google_oauth2/" className="google-link">
+          <div className="google-logo"></div>
+          <p>Sign in with Google</p>
+        </a>
+        <div className="separator">
+          <div className="separator-line"> </div>
+          <p>or</p>
+          <div className="separator-line"> </div>
+        </div>
         { this.renderErrors() }
         <form className="login-form-box">
           <div className="input-item">

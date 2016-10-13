@@ -169,6 +169,52 @@
   align-items: center;
 }
 
+.signup-form-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.google-link {
+  width: 383px;
+  border: 1px solid gray;
+  height: 67px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #484848;
+}
+
+.separator {
+  display: flex;
+  margin: 15px;
+  font-size: 14px;
+}
+
+.separator-line {
+  border-bottom: 1px solid gray;
+}
+
+.google-logo {
+  background-image: asset-url("google.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
 .signup-form-box {
   display: flex;
   flex-direction: column;
