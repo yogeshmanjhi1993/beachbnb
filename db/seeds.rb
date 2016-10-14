@@ -190,3 +190,155 @@ seych3 = Spot.create(
 
 seych3.image = File.open('app/assets/images/seych3.jpg')
 seych3.save!
+
+puerto1 = Spot.create(
+  host_id: hostuser.id,
+  lat: 18.486754,
+  lng: -66.413710,
+  name: "Culebra Beach Flamenco Beach House",
+  description: "The apartment located (3rd floor level) in our building has 2 bedrooms, living room, A/C, satellite-TV and fully equipped kitchen-dinning areas. Free parking at our facility. My place is close to the airport (3 minutes car distance) and great views. You’ll love my place because of the location, the ambiance, the outdoors space, and the people. My place is good for couples, solo adventurers, families (with kids), and big groups.",
+  beds: 3,
+  roomtype: "whole",
+  price: 55,
+  guests: 3,
+  kind: "beach bungalow",
+  address: "107 Vega Baja Blvd",
+  city: "Vega Baja",
+  country: "Puerto Rico"
+)
+
+puerto1.image = File.open('app/assets/images/puerto1.jpg')
+puerto1.save!
+
+puerto2 = Spot.create(
+  host_id: hostuser.id,
+  lat: 18.468378,
+  lng: -66.339593,
+  name: "Oceanfront Penthouse Casa Blanca",
+  description: "Large 2 bed/1.5 bath fourth story oceanfront Penthouse. Kitchen has coffee maker, stove, microwave, fridge, freezer. Large wrap around balcony includes hammock, king bed, and tables. One queen bed, one full bed. Hi-Speed Wifi, AC in bedrooms",
+  beds: 1,
+  roomtype: "private",
+  price: 109,
+  guests: 2,
+  kind: "apartment",
+  address: "11 Calle 4",
+  city: "Dorado",
+  country: "Puerto Rico"
+)
+
+puerto2.image = File.open('app/assets/images/puerto2.jpg')
+puerto2.save!
+
+thai1 = Spot.create(
+  host_id: hostuser.id,
+  lat: 13.539306,
+  lng: 100.623201,
+  name: "Koh Samui, The Bay, Luxury",
+  description: "This 1 bedroom at 102 Sq m is the largest in The Bay compared to other advertised small studios. It boasts a huge twin balcony with amazing views, King size bedroom, kitchen and lounge. Within 5- 10 mins of the best beaches and bars in Samui.",
+  beds: 1,
+  roomtype: "private",
+  price: 225,
+  guests: 2,
+  kind: "apartment",
+  address: "296 Sukhumvit Rd",
+  city: "Samut Prakan",
+  country: "Thailand"
+)
+
+thai1.image = File.open('app/assets/images/thai1.jpg')
+thai1.save!
+
+thai2 = Spot.create(
+  host_id: hostuser.id,
+  lat: 13.549858,
+  lng: 100.527092,
+  name: "Beach apartment with private pool!",
+  description: "Perfect location with private pool.",
+  beds: 3,
+  roomtype: "whole",
+  price: 400,
+  guests: 2,
+  kind: "apartment",
+  address: "10002 Sukhumvit Rd",
+  city: "Samut Prakan",
+  country: "Thailand"
+)
+
+thai2.image = File.open('app/assets/images/thai2.jpg')
+thai2.save!
+
+mexico1 = Spot.create(
+  host_id: hostuser.id,
+  lat: 21.256244,
+  lng: -86.810389,
+  name: "Great B&B in the Cancun Hotel Zone!",
+  description: "Gorgeous, comfortable and big bedroom, has a King Size bed. The room has its own private bathroom with shower, tub and a balcony. Also In the bedroom is a dressing room with plenty of storage space.",
+  beds: 1,
+  roomtype: "private",
+  price: 197,
+  guests: 2,
+  kind: "apartment",
+  address: "104 Calle Vialidad Paseo Mujeres",
+  city: "Cancun",
+  country: "Mexico"
+)
+
+mexico1.image = File.open('app/assets/images/mexico1.jpg')
+mexico1.save!
+
+mexico2 = Spot.create(
+  host_id: hostuser.id,
+  lat: 21.148766,
+  lng: -86.792250,
+  name: "Habitación en Zona Hotelera Cancún",
+  description: "Cómoda habitación con una hermosa vista a la laguna y el campo de golf, ubicada en el KM 8 de la Zona Hotelera, excelente ubicación a 10 min. de la playa y Party Center, supermercado y centros comerciales. Cuenta con A/C, Wifi, baño privado (adjunto).",
+  beds: 1,
+  roomtype: "shared",
+  price: 35,
+  guests: 1,
+  kind: "beach bungalow",
+  address: "47 Blvd Kukulkan",
+  city: "Cancun",
+  country: "Mexico"
+)
+
+mexico2.image = File.open('app/assets/images/mexico2.jpg')
+mexico2.save!
+
+bali1 = Spot.create(
+  host_id: hostuser.id,
+  lat: -8.836851,
+  lng: 115.102395,
+  name: "BEACHFRONT BUNGALOWS: LEMBONGAN",
+  description: "Ketut Bungalows are located on the beachfront of Jungutbatu Beach on the the paradise Island of Nusa Lembongan. Nusa Lembongan Island is a 30 minute fast boat trip from the mainland of Bali, Indonesia. We are a local Balinese family who look forward to welcoming you to experience the culture and diversity our Island can offer. We have individual bungalows to suit your needs and a magic infinity pool to enjoy our spectacular sunsets. Surfing , snorkelling, diving, restaurants, its all here!",
+  beds: 5,
+  roomtype: "whole",
+  price: 201,
+  guests: 8,
+  kind: "beach bungalow",
+  address: "508 Jalan Raya Uluwatu Pecatu",
+  city: "Bali",
+  country: "Indonesia"
+)
+
+bali1.image = File.open('app/assets/images/bali1.jpg')
+bali1.save!
+
+bali2 = Spot.create(
+  host_id: hostuser.id,
+  lat: -8.702453,
+  lng: 115.265029,
+  name: "Villa Kamran - Room Kasiope",
+  description: "The Kamran Villa is a 600 m2 luxurious property, with a 5x11m infinity pool located 250m from the beach. ",
+  beds: 2,
+  roomtype: "private",
+  price: 135,
+  guests: 3,
+  kind: "beach house",
+  address: "3 JL Setapak",
+  city: "Bali",
+  country: "Indonesia"
+)
+
+bali2.image = File.open('app/assets/images/bali2.jpg')
+bali2.save!
