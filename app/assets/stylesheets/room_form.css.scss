@@ -72,6 +72,10 @@
   margin-top: 10px;
 }
 
+.room-submit:hover {
+  cursor: pointer;
+}
+
 .room-form-image {
   background-image: asset-url("hostform.png");
   background-position: center;

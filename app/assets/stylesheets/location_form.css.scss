@@ -39,6 +39,10 @@
   margin-top: 10px;
 }
 
+.location-submit:hover {
+  cursor: pointer;
+}
+
 .location-form-image {
   background-image: asset-url("hostform.png");
   background-position: center;
