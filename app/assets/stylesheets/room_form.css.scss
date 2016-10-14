@@ -1,0 +1,83 @@
+.room-form {
+  height: calc(100% - 65px);
+  width: 66%;
+  margin: 65px auto 0px auto;
+  padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-form-half {
+  width: 50%;
+}
+.roomtype-form label {
+  display: block;
+}
+
+.roomtype-form h3 {
+  font-size: 22px;
+  color: #484848;
+}
+
+#kind-selector {
+  background: transparent;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  height: 45px;
+  width: 300px;
+  padding: 10px 0 10px 10px;
+}
+
+.bed-counter {
+  margin-bottom: 10px;
+}
+
+.label-text {
+  font-size: 18px;
+  color: #484848;
+}
+
+.count-buttons {
+  width: 33%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-button {
+  font-size: 50px;
+  color: #787878;
+  width: 50%;
+  text-align: center;
+}
+
+.bed-minus, .guest-minus {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.room-submit {
+  background: rgb(0, 166, 153);
+  color: white;
+  padding: 10px 22px;
+  border: 1px solid rgb(0, 166, 153);
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+.room-form-image {
+  background-image: asset-url("hostform.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 500px;
+  width: 400px;
+}

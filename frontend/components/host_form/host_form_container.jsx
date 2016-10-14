@@ -5,7 +5,8 @@ import { createSpot } from '../../actions/spot_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  spotFields: state.spotFields
+  spotFields: state.spotFields,
+  spots: state.spots
 });
 
 const mapDispatchToProps = dispatch => ({

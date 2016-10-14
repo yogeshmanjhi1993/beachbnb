@@ -12,6 +12,7 @@ import DescriptionForm from './host_form/description_form';
 import SpotDetailContainer from './spot_detail/spot_detail_container';
 import BookingDetailContainer from './booking_detail/booking_detail_container';
 
+
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router history={hashHistory}>

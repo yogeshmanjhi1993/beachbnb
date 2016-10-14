@@ -26,9 +26,9 @@ class WelcomeForm extends React.Component {
           <h2 className="host-form-first-heading">
             Hi {this.props.currentUser.fname}! Let's get you ready to become a host.
           </h2>
-          <p>STEP 1</p>
-          <p>What kind of place do you have?</p>
-          <form onSubmit={this.welcomeSubmit}>
+          <p className="step-subheading">STEP 1</p>
+          <p className="kind-subheading">What kind of place do you have?</p>
+          <form onSubmit={this.welcomeSubmit} className="welcome-form">
             <select name="roomtype" className="spot-form-input form-dropdown" id="roomtype-selector">
               <option value="whole">Entire home/apt</option>
               <option value="private">Private room</option>
@@ -63,7 +63,7 @@ class WelcomeForm extends React.Component {
           </form>
         </div>
         <div className="host-form-image">
-
+          
         </div>
       </div>
     );

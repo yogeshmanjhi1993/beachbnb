@@ -70,18 +70,25 @@ class RoomForm extends React.Component {
               <option value="beach bungalow">Beach Bungalow</option>
             </select>
             <h3>How many guests can your place accommodate?</h3>
-            <div className="bed-counter">
-              <div>{this.state.beds} {bedText}</div>
-              <button type="button" className="bed-minus" onClick={this.bedMinus} disabled={bedMinusDisabled}>-</button>
-              <button type="button" className="bed-plus" onClick={this.bedPlus}>+</button>
+            <div className="bed-counter counter">
+              <div className="label-text">{this.state.beds} {bedText}</div>
+              <div className="count-buttons">
+                <button type="button" className="bed-minus count-button" onClick={this.bedMinus} disabled={bedMinusDisabled}>-</button>
+                <button type="button" className="bed-plus count-button" onClick={this.bedPlus}>+</button>
+              </div>
             </div>
-            <div className="guest-counter">
-              <div>{this.state.guests} {guestText}</div>
-              <button type="button" className="guest-minus" onClick={this.guestMinus} disabled={guestMinusDisabled}>-</button>
-              <button type="button" className="guest-plus" onClick={this.guestPlus}>+</button>
+            <div className="guest-counter counter">
+              <div className="label-text">{this.state.guests} {guestText}</div>
+              <div className="count-buttons">
+                <button type="button" className="guest-minus count-button" onClick={this.guestMinus} disabled={guestMinusDisabled}>-</button>
+                <button type="button" className="guest-plus count-button" onClick={this.guestPlus}>+</button>
+              </div>
             </div>
             <input type="submit" value="Next" className="room-submit" />
           </form>
+        </div>
+        <div className="room-form-image">
+
         </div>
       </div>
     );

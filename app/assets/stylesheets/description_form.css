@@ -3,4 +3,42 @@
   width: 66%;
   margin: 65px auto 0px auto;
   padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-form-half {
+  width: 50%;
+}
+
+.description-form-heading {
+  font-size: 22px;
+  color: #484848;
+}
+
+.description-textarea {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#price-selector {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.description-submit {
+  background: rgb(0, 166, 153);
+  color: white;
+  padding: 10px 22px;
+  border: 1px solid rgb(0, 166, 153);
+  border-radius: 3px;
+  margin-top: 10px;
 }

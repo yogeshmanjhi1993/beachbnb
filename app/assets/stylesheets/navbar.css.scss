@@ -13,7 +13,7 @@
   top: 0;
   width: 100%;
   background: white;
-  z-index: 283746297;
+  z-index: 5;
 }
 
 .nav-logo {
@@ -328,4 +328,8 @@
   color: rgb(205, 205, 205);
   font-size: 30px;
   padding-right: 10px;
+}
+
+.ReactModal__Overlay {
+  z-index: 10;
 }

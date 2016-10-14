@@ -10,10 +10,14 @@ import { REQUEST_SPOTS,
        } from '../actions/spot_actions';
 import { fetchSpots, fetchSpot, createSpot } from '../util/spot_api_util';
 import { UPDATE_FILTER } from '../actions/filter_actions';
+import { hashHistory } from 'react-router';
 
 const SpotMiddleware = ({ getState, dispatch }) => next => action => {
   const spotsSuccess = data => dispatch(receiveSpots(data));
-  const spotSuccess = data => dispatch(receiveSingleSpot(data));
+  const spotSuccess = data => {
+    dispatch(receiveSingleSpot(data));
+    hashHistory.push(`/spots/${data.id}`);
+  };
   switch(action.type) {
     case REQUEST_SPOTS:
       const filters = getState().filters;

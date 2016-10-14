@@ -58,16 +58,22 @@ class LocationForm extends React.Component {
 
   render() {
     return (
-      <form className="location-form" onSubmit={this.locationSubmit}>
-        <h2>Where's your place located?</h2>
-        <h4>Street Address</h4>
-        <input type="text" id="address-search" placeholder="e.g. 123 Main St." />
-        <h4>City</h4>
-        <input type="text" className="location-input" placeholder="e.g. New York" value={this.state.locality}/>
-        <h4>Country</h4>
-        <input type="text" className="country-input" placeholder="e.g. United States" value={this.state.country} />
-        <input type="submit" value="next" />
-      </form>
+      <div className="location-form">
+        <form className="location-form-half" onSubmit={this.locationSubmit}>
+          <h2>Where's your place located?</h2>
+          <h4>Street Address</h4>
+          <input type="text" id="address-search" className="location-form-input" placeholder="e.g. 123 Main St." />
+          <h4>City</h4>
+          <input type="text" className="location-input location-form-input" placeholder="e.g. New York" value={this.state.locality}/>
+          <h4>Country</h4>
+          <input type="text" className="country-input location-form-input" placeholder="e.g. United States" value={this.state.country} />
+          <br />
+          <input type="submit" value="next" className="location-submit" />
+        </form>
+        <div className="location-form-image">
+
+        </div>
+      </div>
     );
   }
 }

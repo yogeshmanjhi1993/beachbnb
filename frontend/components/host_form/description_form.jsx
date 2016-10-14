@@ -15,7 +15,8 @@ class DescriptionForm extends React.Component {
     let priceSelector = document.getElementById("price-selector");
     this.props.updateField(descriptionSelector.name, descriptionSelector.value);
     this.props.updateField(priceSelector.name, parseInt(priceSelector.value));
-    this.props.createSpot(); 
+    this.props.createSpot();
+
   }
 
   updateFile(e) {
@@ -33,21 +34,27 @@ class DescriptionForm extends React.Component {
 
   render(){
     return (
-      <form className="description-form" onSubmit={this.descriptionSubmit}>
-        <h3>Tell us about your place!</h3>
-        <textarea
-          id="description-selector"
-          name="description"
-          rows="10"
-          cols="50"
-          defaultValue="description..." />
-        <h4>Price</h4>
-        <input type="number" name="price" id="price-selector" />
-        <h4>Image</h4>
-        <input type="file" onChange={this.updateFile} />
-        <input type="submit" value="Finish" />
-        <img src={this.state.imageUrl} />
-      </form>
+      <div className="description-form">
+        <form className="description-form-half" onSubmit={this.descriptionSubmit}>
+          <h3 className="description-form-heading">Tell us about your place!</h3>
+          <textarea
+            id="description-selector"
+            className="description-textarea"
+            name="description"
+            rows="10"
+            cols="50"
+            placeholder="description..." />
+          <h4>Price</h4>
+          <input type="number" name="price" id="price-selector" placeholder="0"/>
+          <h4>Image</h4>
+          <input type="file" onChange={this.updateFile} />
+          <input type="submit" value="Finish" className="description-submit"/>
+          <img src={this.state.imageUrl} className="preview-image"/>
+        </form>
+        <div className="location-form-image">
+
+        </div>
+      </div>
     );
   }
 }
