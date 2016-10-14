@@ -342,3 +342,117 @@ bali2 = Spot.create(
 
 bali2.image = File.open('app/assets/images/bali2.jpg')
 bali2.save!
+
+maldives1 = Spot.create(
+  host_id: hostuser.id,
+  lat: -0.699692,
+  lng: 73.162078,
+  name: "Deluxe room for Holiday",
+  description: "My place is close to the beach, family-friendly activities, public transport, and the airport. You’ll love my place because of the outdoors space, the neighborhood, the light, and the comfy bed. My place is good for couples and solo adventurers.",
+  beds: 1,
+  roomtype: "whole",
+  price: 99,
+  guests: 2,
+  kind: "beach bungalow",
+  address: "15 A4",
+  city: "Gan Addu City",
+  country: "Maldives"
+)
+
+maldives1.image = File.open('app/assets/images/maldives1.jpg')
+maldives1.save!
+
+maldives2 = Spot.create(
+  host_id: hostuser.id,
+  lat: -0.612620,
+  lng: 73.225697,
+  name: "Coconut Tree Hulhuvilla Beach",
+  description: "Coconut Tree Hulhuvilla Beach is the first Eco friendly hotel in Hulhumale’, located at the beach front area. It’s 10 minutes drive from Ibrahim Nasir International Airport. Our Luxury Boutique Hotel is ideal for guests looking for a comfortable stay",
+  beds: 3,
+  roomtype: "private",
+  price: 205,
+  guests: 3,
+  kind: "beach house",
+  address: "47 Addu City Rd",
+  city: "Addu City",
+  country: "Maldives"
+)
+
+maldives2.image = File.open('app/assets/images/maldives2.jpg')
+maldives2.save!
+
+fiji1 = Spot.create(
+  host_id: hostuser.id,
+  lat: -17.743498,
+  lng: 178.023310,
+  name: "Beautiful Beach House with Pool",
+  description: "Hello! Welcome to Nadi, Fiji! This property is close to Bus stop going to BEACH and everywhere else, restaurants and cafes, 24-hour supermarket, airport, gym, great views, and hiking trials. It's located in a safe and affluent neighborhood. You’ll love my place because of the coziness, the views, the kitchen, BIG swimming pool, privacy, the comfy bed, family friendly. My place is good for couples, solo adventurers, business travelers, families (with kids), big groups!!!",
+  beds: 3,
+  roomtype: "whole",
+  price: 400,
+  guests: 3,
+  kind: "beach house",
+  address: "234 Nadi Rd",
+  city: "Nadi",
+  country: "Fiji"
+)
+
+fiji1.image = File.open('app/assets/images/fiji1.jpg')
+fiji1.save!
+
+fiji2 = Spot.create(
+  host_id: hostuser.id,
+  lat: -17.914139,
+  lng: 177.863266,
+  name: "Aquarius On The Beach",
+  description: "Our small, very personal hotel caters for those who want to enjoy staying at a beachfront location, but have all the amenities of privacy, a good restaurant, bar and activities - all within one property. Oh, and of course, all at a good value.",
+  beds: 2,
+  roomtype: "private",
+  price: 400,
+  guests: 3,
+  kind: "beach bungalow",
+  address: "2344 Nadi Rd",
+  city: "Nadi",
+  country: "Fiji"
+)
+
+fiji2.image = File.open('app/assets/images/fiji2.jpg')
+fiji2.save!
+
+cayman1 = Spot.create(
+  host_id: hostuser.id,
+  lat: 19.351786,
+  lng: -81.210496,
+  name: "Coco Beach Villas #1 (Ocean Front View)",
+  description: "My place is on a peaceful beach, with restaurants, dining, art and culture. You’ll love my place because of the outdoor space, the comfy beds, the kitchen. My place is great for couples, solo adventurers, business travelers, and families (with kids).",
+  beds: 2,
+  roomtype: "private",
+  price: 197,
+  guests: 3,
+  kind: "beach bungalow",
+  address: "25 North Side Rd",
+  city: "Grand Cayman",
+  country: "Cayman Islands"
+)
+
+cayman1.image = File.open('app/assets/images/cayman1.jpg')
+cayman1.save!
+
+cayman2 = Spot.create(
+  host_id: hostuser.id,
+  lat: 19.294053,
+  lng: -81.224725,
+  name: "2 Bed beach front apartment",
+  description: "If you are seeking relaxation or a perfect romantic getaway, this two bedroom, two bathroom ocean front condo truly is a piece of paradise. Situated on a quiet cove with stunning private beach and stunning ocean views.",
+  beds: 1,
+  roomtype: "whole",
+  price: 456,
+  guests: 4,
+  kind: "beach house",
+  address: "252 Bodden Town Rd",
+  city: "Grand Cayman",
+  country: "Cayman Islands"
+)
+
+cayman2.image = File.open('app/assets/images/cayman2.jpg')
+cayman2.save!
