@@ -126,6 +126,10 @@
 
 }
 
+.book-button:hover {
+  cursor: pointer;
+}
+
 .booking-form p {
   font-size: 10px;
   color: rgb(118, 118, 118);
