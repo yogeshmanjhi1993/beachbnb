@@ -40,6 +40,8 @@ bora1 = Spot.create(
 bora1.image = File.open('app/assets/images/bora1.jpg')
 bora1.save!
 
+
+
 bora2 = Spot.create(
   host_id: hostuser.id,
   lat: -16.528515,
@@ -133,6 +135,8 @@ hawaii3 = Spot.create(
 
 hawaii3.image = File.open('app/assets/images/hawaii3.jpg')
 hawaii3.save!
+
+Review.create(user_id: guestuser.id, spot_id: hawaii3.id, body: "Staying here was great!  Perfect location.")
 
 seych1 = Spot.create(
   host_id: hostuser.id,
