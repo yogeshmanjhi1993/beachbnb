@@ -25,7 +25,7 @@ class SpotMap extends React.Component {
       zoom: 11
     };
     const newCenter = { center:
-      { lat: this.props.location.lat, lng: this.props.location.lng }
+      { lat: this.props.mapLocation.lat, lng: this.props.mapLocation.lng }
     };
     Object.assign(mapOptions, newCenter);
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
@@ -35,7 +35,7 @@ class SpotMap extends React.Component {
   }
 
   componentDidUpdate() {
-    const newCenter = { lat: this.props.location.lat, lng: this.props.location.lng };
+    const newCenter = { lat: this.props.mapLocation.lat, lng: this.props.mapLocation.lng };
     this.map.setCenter(newCenter);
     this.MarkerManager.updateMarkers(this.props.spots);
   }

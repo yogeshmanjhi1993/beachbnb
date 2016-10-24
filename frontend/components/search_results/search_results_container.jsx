@@ -6,7 +6,7 @@ import { updateLocation } from '../../actions/location_actions';
 
 const mapStateToProps = state => ({
   spots: asArray(state.spots),
-  location: state.location
+  mapLocation: state.location
 });
 
 const mapDispatchToProps = dispatch => ({

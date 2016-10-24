@@ -76,7 +76,8 @@ class Home extends React.Component {
     }
     this.props.updateLocation(mapCenter);
     hashHistory.push({
-      pathname: '/search'
+      pathname: '/search',
+      query: {lat: mapCenter.lat, lng: mapCenter.lng}
     });
   }
 
