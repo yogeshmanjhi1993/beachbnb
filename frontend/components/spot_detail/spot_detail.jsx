@@ -28,7 +28,6 @@ class SpotDetail extends React.Component {
 
   setSpot() {
     this.spot = this.props.spots[this.props.params.id];
-    debugger
     if (this.spot.roomtype === "whole") {
       this.roomType = "Entire home/apt";
     } else if (this.spot.roomtype === "shared") {
@@ -86,7 +85,6 @@ class SpotDetail extends React.Component {
   }
 
   render() {
-    debugger
     const { focusedInput, startDate, endDate } = this.state;
     return (
       <div className="spot-detail-page">
