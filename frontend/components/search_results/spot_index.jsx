@@ -7,9 +7,6 @@ class SpotIndex extends React.Component {
    this.props.updateLocation({ lat:parseFloat(this.props.location.lat), lng:parseFloat(this.props.location.lng) });
  }
 
- componentDidMount() {
- }
-
   render() {
     let rentalText = (this.props.spots.length === 1) ? "Rental" : "Rentals";
     return (

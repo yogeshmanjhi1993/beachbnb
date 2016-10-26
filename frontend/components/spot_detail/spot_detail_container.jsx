@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   requestSingleSpot: (id) => dispatch(requestSingleSpot(id)),
   createBooking: (booking) => dispatch(createBooking(booking)),
+  requestReviews: spotId => dispatch(requestReviews(spotId))
 });
 
 const SpotDetailContainer = connect(

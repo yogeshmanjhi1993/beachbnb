@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/taekyunggg/AirCLD#readme",
   "dependencies": {
+    "async": "^2.1.2",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-react-jsx-source": "^6.9.0",

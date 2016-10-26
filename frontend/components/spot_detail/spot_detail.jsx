@@ -2,6 +2,8 @@ import React from 'react';
 import { DateRangePicker } from 'react-dates';
 import { hashHistory } from 'react-router';
 import ReviewContainer from '../reviews/review_container';
+import waterfall from 'async/waterfall';
+import async from 'async';
 
 class SpotDetail extends React.Component {
   constructor(props) {
@@ -14,11 +16,19 @@ class SpotDetail extends React.Component {
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.handleBooking = this.handleBooking.bind(this);
+    this.setSpot = this.setSpot.bind(this);
+    this.props.requestReviews(this.props.params.id);
+    this.props.requestSingleSpot(this.props.params.id);
+    this.setSpot();
   }
 
-  componentWillMount() {
-    this.props.requestSingleSpot(this.props.params.id);
+  componentWillMount(){
+
+  }
+
+  setSpot() {
     this.spot = this.props.spots[this.props.params.id];
+    debugger
     if (this.spot.roomtype === "whole") {
       this.roomType = "Entire home/apt";
     } else if (this.spot.roomtype === "shared") {
@@ -76,6 +86,7 @@ class SpotDetail extends React.Component {
   }
 
   render() {
+    debugger
     const { focusedInput, startDate, endDate } = this.state;
     return (
       <div className="spot-detail-page">
