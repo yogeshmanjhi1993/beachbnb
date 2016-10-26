@@ -4,6 +4,8 @@
 
 beachBnB is a full-stack web application inspired by AirBnB.  It is built with Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
+![homepage](app/assets/images/homepage.png)
+
 ## Features & Implementation
 
 ### Login/Signup via Google
@@ -11,6 +13,9 @@ Users are able to signup and login using their Google account.  This was impleme
 
 ### Location Search via Google Maps API/Google Places Autocomplete API
 I implemented Google Maps and Autocomplete to allow users to search spots to visit, based on a Google Maps location.  The Autocomplete API was used in the navigation menu search bar and the home page search bar.  When you select a location via the Autocomplete, it updates the location to search in the redux store and then opens a map, centered at the location you just searched.
+![searchsubmit](app/assets/images/searchsubmit.png)
+
+![results](app/assets/images/searchresults.png)
 
 ### Spot Creation and Filtering
 Users can create a spot via a multi-page spot form.  This form stores the new spot's attributes in the redux store, until they are ready to submit the spot.  Users can upload an image for the spot via the Paperclip Gem which is hooked up to AWS.  Once spots are created, Users can filter the spots based on their price and property type.
