@@ -74,11 +74,11 @@ class Home extends React.Component {
       mapCenter.lat = 19.320751;
       mapCenter.lng = -81.237332;
     }
-    this.props.updateLocation(mapCenter);
     hashHistory.push({
       pathname: '/search',
       query: {lat: mapCenter.lat, lng: mapCenter.lng}
     });
+    this.props.updateLocation(mapCenter);
   }
 
   render() {

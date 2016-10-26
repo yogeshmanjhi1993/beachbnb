@@ -13,10 +13,17 @@ class SearchResults extends React.Component {
       <div className="search-results-page">
         <div className="index-half">
           <FilterForm updateFilter={this.props.updateFilter}/>
-          <SpotIndex spots={this.props.spots} location={this.props.location.query} updateLocation={this.props.updateLocation} />
+          <SpotIndex
+            spots={this.props.spots}
+            location={this.props.location.query}
+            updateLocation={this.props.updateLocation} />
         </div>
         <div className="map-half">
-          <SpotMap spots={this.props.spots} mapLocation={this.props.mapLocation} updateLocation={this.props.updateLocation} updateFilter={this.props.updateFilter}/>
+          <SpotMap
+            spots={this.props.spots}
+            mapLocation={this.props.mapLocation}
+            updateLocation={this.props.updateLocation}
+            updateFilter={this.props.updateFilter}/>
         </div>
       </div>
     );

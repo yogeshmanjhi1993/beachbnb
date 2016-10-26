@@ -4,10 +4,10 @@ import SpotIndexItem from './spot_index_item';
 class SpotIndex extends React.Component {
  constructor(props) {
    super(props);
+   this.props.updateLocation({ lat:parseFloat(this.props.location.lat), lng:parseFloat(this.props.location.lng) });
  }
 
  componentDidMount() {
-   this.props.updateLocation({ lat:parseFloat(this.props.location.lat), lng:parseFloat(this.props.location.lng) });
  }
 
   render() {
