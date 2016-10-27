@@ -2,8 +2,7 @@ import React from 'react';
 import { DateRangePicker } from 'react-dates';
 import { hashHistory } from 'react-router';
 import ReviewContainer from '../reviews/review_container';
-import waterfall from 'async/waterfall';
-import async from 'async';
+import Footer from '../footer/footer';
 
 class SpotDetail extends React.Component {
   constructor(props) {
@@ -163,6 +162,7 @@ class SpotDetail extends React.Component {
             <ReviewContainer spot={this.spot}/>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
