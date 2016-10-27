@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../footer/footer';
 import { hashHistory } from 'react-router';
 
 class Home extends React.Component {
@@ -182,6 +183,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
+        <Footer />
       </main>
     );
   }
