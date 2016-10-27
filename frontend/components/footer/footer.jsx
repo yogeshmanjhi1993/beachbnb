@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="footer">
-      <h4>Connect with me on</h4>
+      <h4>Connect with <a href="http://richardkwan.io/" className="portfolio-link">me</a> on</h4>
       <ul className="footer-icon-list">
         <li>
           <a href="https://github.com/taekyunggg">

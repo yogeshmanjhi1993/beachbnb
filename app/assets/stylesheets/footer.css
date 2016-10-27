@@ -26,3 +26,11 @@
 .footer-icon:hover {
   color: rgb(103, 103, 103);
 }
+
+.portfolio-link {
+  color: rgb(5, 112, 152);
+}
+
+.portfolio-link:hover {
+  text-decoration: underline;
+}
