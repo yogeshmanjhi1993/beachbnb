@@ -23,22 +23,21 @@ class Home extends React.Component {
 
     const autocomplete = new google.maps.places.Autocomplete(homeSearch, options);
     this.autocomplete = autocomplete;
+    this.autocomplete.addListener('place_changed', this.searchSubmit);
   }
 
-  searchSubmit(e) {
-    e.preventDefault();
-    if (this.autocomplete.getPlace()) {
-      const searchLocation = this.autocomplete.getPlace().geometry.location;
-      const mapCenter = {
-        name: this.autocomplete.getPlace().formatted_address,
-        lat: searchLocation.lat(),
-        lng: searchLocation.lng()
-      };
-      this.props.updateLocation(mapCenter);
-      hashHistory.push({
-        pathname: '/search'
-      });
-    }
+  searchSubmit() {
+    const searchLocation = this.autocomplete.getPlace().geometry.location;
+    const mapCenter = {
+      name: this.autocomplete.getPlace().formatted_address,
+      lat: searchLocation.lat(),
+      lng: searchLocation.lng()
+    };
+    hashHistory.push({
+      pathname: '/search',
+      query: {lat: mapCenter.lat, lng: mapCenter.lng}
+    });
+    this.props.updateLocation(mapCenter);
   }
 
   cardClick(e) {
@@ -95,7 +94,7 @@ class Home extends React.Component {
           <h2 className="search-heading">
             Search over 2 million homes in over 190 countries
           </h2>
-          <form onSubmit={this.searchSubmit} >
+          <form>
             <input
               type="text"
               placeholder="Where to?"

@@ -40,6 +40,7 @@ class Navbar extends React.Component {
 
     const autocomplete = new google.maps.places.Autocomplete(navSearch, options);
     this.autocomplete = autocomplete;
+    this.autocomplete.addListener('place_changed', this.searchSubmit);
     if (this.props.currentUser) {
       this.props.requestBookings(this.props.currentUser.id);
     }
@@ -144,20 +145,19 @@ class Navbar extends React.Component {
     }
   }
 
-  searchSubmit(e) {
-    e.preventDefault();
-    if (this.autocomplete.getPlace()) {
-      const searchLocation = this.autocomplete.getPlace().geometry.location;
-      const mapCenter = {
-        name: this.autocomplete.getPlace().formatted_address,
-        lat: searchLocation.lat(),
-        lng: searchLocation.lng()
-      };
-      this.props.updateLocation(mapCenter);
-      hashHistory.push({
-        pathname: '/search'
-      });
-    }
+  searchSubmit() {
+    const searchLocation = this.autocomplete.getPlace().geometry.location;
+    const mapCenter = {
+      name: this.autocomplete.getPlace().formatted_address,
+      lat: searchLocation.lat(),
+      lng: searchLocation.lng()
+    };
+
+    this.props.updateLocation(mapCenter);
+    hashHistory.push({
+      pathname: '/search',
+      query: {lat: mapCenter.lat, lng: mapCenter.lng}
+    });
   }
 
   render() {
@@ -170,7 +170,7 @@ class Navbar extends React.Component {
         <div className='nav-logo' onClick={this.returnToHome}>
 
         </div>
-        <form className='nav-search' onSubmit={this.searchSubmit}>
+        <form className='nav-search'>
           <i className="fa fa-search" aria-hidden="true"></i>
           <input
             type="text"
