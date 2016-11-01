@@ -43,7 +43,7 @@ class Spot < ApplicationRecord
   validates :roomtype, inclusion: { in: %w(shared private whole) }
   validates :kind, inclusion: { in: ["apartment", "beach house", "beach bungalow"]}
 
-  has_attached_file :image, default_url: "modern2.jpg"
+  has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :host,

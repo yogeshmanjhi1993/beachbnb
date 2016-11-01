@@ -2,7 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
-import { loginModalStyle, signupModalStyle } from './modal_styles';
+import AboutModal from '../about_modal/about_modal';
+import { loginModalStyle, signupModalStyle, aboutModalStyle } from './modal_styles';
 import { hashHistory } from 'react-router';
 import { MONTHS } from '../../util/month_list';
 
@@ -11,12 +12,15 @@ class Navbar extends React.Component {
     super(props);
     this.state = ({
       loginModalOpen: false,
-      signupModalOpen: false
+      signupModalOpen: false,
+      aboutModalOpen: false
     });
     this.openLoginModal = this.openLoginModal.bind(this);
     this.closeLoginModal = this.closeLoginModal.bind(this);
     this.openSignupModal = this.openSignupModal.bind(this);
     this.closeSignupModal = this.closeSignupModal.bind(this);
+    this.openAboutModal = this.openAboutModal.bind(this);
+    this.closeAboutModal = this.closeAboutModal.bind(this);
     this.loggedInButtons = this.loggedInButtons.bind(this);
     this.searchSubmit = this.searchSubmit.bind(this);
     this.toHostForm = this.toHostForm.bind(this);
@@ -59,6 +63,14 @@ class Navbar extends React.Component {
     this.setState({ signupModalOpen: true });
   }
 
+  closeAboutModal() {
+    this.setState({ aboutModalOpen: false });
+  }
+
+  openAboutModal() {
+    this.setState({ aboutModalOpen: true });
+  }
+
   toBookingDetail(e) {
     hashHistory.push(`/bookings/${e.currentTarget.dataset.id}`);
   }
@@ -67,7 +79,7 @@ class Navbar extends React.Component {
     return (
       <ul className='nav-buttons group'>
         <li onClick={this.toHostForm}><button className="nav-create-host">Become a Host</button></li>
-        <li><button className="nav-help">Help</button></li>
+        <li onClick={this.openAboutModal}><button className="nav-about">About</button></li>
         <li onClick={this.openSignupModal}><button className="nav-signup">Sign Up</button></li>
         <li onClick={this.openLoginModal}><button className="nav-login">Log In</button></li>
       </ul>
@@ -103,8 +115,7 @@ class Navbar extends React.Component {
             {trips}
           </ul>
         </li>
-        <li><button className="nav-messages">Messages</button></li>
-        <li><button className="nav-help">Help</button></li>
+        <li onClick={this.openAboutModal}><button className="nav-about">About</button></li>
         <li className="nav-user-info">
           <button>{currentUser.fname}</button>
           <ul className="profile-dropdown">
@@ -128,8 +139,8 @@ class Navbar extends React.Component {
     if (this.props.currentUser) {
       hashHistory.push("/host");
     } else {
+      this.props.receiveErrors(['You must be logged in to create a hosting']);
       this.openLoginModal();
-      this.toHostForm();
     }
   }
 
@@ -182,6 +193,12 @@ class Navbar extends React.Component {
           onRequestClose={this.closeSignupModal}
           style={signupModalStyle}>
           <SignupFormContainer closeModal={this.closeSignupModal} />
+        </Modal>
+        <Modal
+          isOpen={this.state.aboutModalOpen}
+          onRequestClose={this.closeAboutModal}
+          style={aboutModalStyle}>
+          <AboutModal />
         </Modal>
       </nav>
     );

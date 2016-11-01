@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout, clearErrors } from '../../actions/session_actions';
+import { logout, clearErrors, receiveErrors } from '../../actions/session_actions';
 import { updateLocation } from '../../actions/location_actions';
 import { requestBookings } from '../../actions/booking_actions';
 import Navbar from './navbar';
@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   clearErrors: () => dispatch(clearErrors()),
+  receiveErrors: (errors) => dispatch(receiveErrors(errors)),
   updateLocation: (location) => dispatch(updateLocation(location)),
   requestBookings: (guestId) => dispatch(requestBookings(guestId))
 });

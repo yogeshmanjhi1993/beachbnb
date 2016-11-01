@@ -18,11 +18,10 @@ class SpotDetail extends React.Component {
     this.setSpot = this.setSpot.bind(this);
     this.props.requestReviews(this.props.params.id);
     this.props.requestSingleSpot(this.props.params.id);
-    this.setSpot();
   }
 
-  componentWillMount(){
-
+  componentWillMount() {
+    this.setSpot();
   }
 
   setSpot() {

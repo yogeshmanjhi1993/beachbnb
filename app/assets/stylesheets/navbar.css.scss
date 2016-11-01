@@ -337,3 +337,33 @@
 .user-submit:hover, .google-link:hover {
   cursor: pointer;
 }
+
+.about-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-port {
+  text-decoration: underline;
+  color: rgb(15, 142, 176);
+}
+
+.about-port:hover {
+  color: rgb(36, 102, 170);
+}
+
+.about-modal i {
+  font-size: 35px;
+}
+
+.about-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.about-links a:hover {
+  color: rgb(7, 164, 136);
+}
