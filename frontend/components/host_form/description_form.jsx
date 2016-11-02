@@ -6,6 +6,7 @@ class DescriptionForm extends React.Component {
     super(props);
     this.descriptionSubmit = this.descriptionSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.state = { imageUrl: null };
   }
 
@@ -13,9 +14,14 @@ class DescriptionForm extends React.Component {
     e.preventDefault();
     let descriptionSelector = document.getElementById("description-selector");
     let priceSelector = document.getElementById("price-selector");
-    this.props.updateField(descriptionSelector.name, descriptionSelector.value);
-    this.props.updateField(priceSelector.name, parseInt(priceSelector.value));
-    this.props.createSpot();
+    if (this.state.imageUrl && descriptionSelector.value && priceSelector.value) {
+      this.props.updateField(descriptionSelector.name, descriptionSelector.value);
+      this.props.updateField(priceSelector.name, parseInt(priceSelector.value));
+      this.props.clearErrors();
+      this.props.createSpot();
+    } else {
+      this.props.receiveErrors(["please fill all values, including an image"]);
+    }
 
   }
 
@@ -32,11 +38,24 @@ class DescriptionForm extends React.Component {
     }
   }
 
+  renderErrors() {
+		return(
+			<ul className="form-errors">
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
+
   render(){
     return (
       <div className="description-form">
         <form className="description-form-half" onSubmit={this.descriptionSubmit}>
           <h3 className="description-form-heading">Tell us about your place!</h3>
+          { this.renderErrors() }
           <textarea
             id="description-selector"
             className="description-textarea"

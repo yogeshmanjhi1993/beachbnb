@@ -11,7 +11,10 @@ class HostForm extends React.Component {
         currentUser: this.props.currentUser,
         updateField: this.props.updateField,
         spotFields: this.props.spotFields,
-        createSpot: this.props.createSpot
+        createSpot: this.props.createSpot,
+        errors: this.props.errors,
+        receiveErrors: this.props.receiveErrors,
+        clearErrors: this.props.clearErrors
       });
     });
   }

@@ -5,6 +5,7 @@ class WelcomeForm extends React.Component {
   constructor(props) {
     super(props);
     this.welcomeSubmit = this.welcomeSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   welcomeSubmit(e) {
@@ -12,12 +13,29 @@ class WelcomeForm extends React.Component {
     let roomtypeSelector = document.getElementById("roomtype-selector");
     let guestsSelector = document.getElementById("guests-selector");
     let nameSelector = document.getElementById("name-input");
-    this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
-    this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
-    this.props.updateField(nameSelector.name, nameSelector.value);
-    this.props.updateField("host_id", this.props.currentUser.id);
-    hashHistory.push("/room");
+    if (nameSelector.value) {
+      this.props.updateField(roomtypeSelector.name, roomtypeSelector.value);
+      this.props.updateField(guestsSelector.name, parseInt(guestsSelector.value));
+      this.props.updateField(nameSelector.name, nameSelector.value);
+      this.props.updateField("host_id", this.props.currentUser.id);
+      this.props.clearErrors();
+      hashHistory.push("/room");
+    } else {
+      this.props.receiveErrors(["You must name your spot to continue"]);
+    }
   }
+
+  renderErrors() {
+		return(
+			<ul className="form-errors">
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
 
   render() {
     return (
@@ -28,6 +46,7 @@ class WelcomeForm extends React.Component {
           </h2>
           <p className="step-subheading">STEP 1</p>
           <p className="kind-subheading">What kind of place do you have?</p>
+          { this.renderErrors() }
           <form onSubmit={this.welcomeSubmit} className="welcome-form">
             <select name="roomtype" className="spot-form-input form-dropdown" id="roomtype-selector">
               <option value="whole">Entire home/apt</option>
@@ -63,7 +82,7 @@ class WelcomeForm extends React.Component {
           </form>
         </div>
         <div className="host-form-image">
-          
+
         </div>
       </div>
     );

@@ -16,15 +16,16 @@ class SpotDetail extends React.Component {
     this.onFocusChange = this.onFocusChange.bind(this);
     this.handleBooking = this.handleBooking.bind(this);
     this.setSpot = this.setSpot.bind(this);
-    if (Object.keys(this.props.spots).length === 0) {
+    // if (Object.keys(this.props.spots).length === 0) {
       this.props.requestSingleSpot(this.props.params.id);
       this.props.requestReviews(this.props.params.id);
-    }
+    // }
   }
 
   componentWillMount() {
     this.setSpot();
   }
+
 
   setSpot() {
     this.spot = this.props.spots[this.props.params.id];

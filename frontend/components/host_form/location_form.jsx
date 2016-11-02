@@ -15,6 +15,7 @@ class LocationForm extends React.Component {
     };
     this.preFillFields = this.preFillFields.bind(this);
     this.locationSubmit = this.locationSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -48,12 +49,29 @@ class LocationForm extends React.Component {
 
   locationSubmit(e) {
     e.preventDefault();
-    this.props.updateField("address", `${this.state.street_number} ${this.state.route}`);
-    this.props.updateField("country", this.state.country);
-    this.props.updateField("city", this.state.locality);
-    this.props.updateField("lat", this.state.lat);
-    this.props.updateField("lng", this.state.lng);
-    hashHistory.push("/description");
+    if (this.state.country) {
+      this.props.updateField("address", `${this.state.street_number} ${this.state.route}`);
+      this.props.updateField("country", this.state.country);
+      this.props.updateField("city", this.state.locality);
+      this.props.updateField("lat", this.state.lat);
+      this.props.updateField("lng", this.state.lng);
+      this.props.clearErrors();
+      hashHistory.push("/description");
+    } else {
+      this.props.receiveErrors(["Please enter a valid address to fill fields"]);
+    }
+  }
+
+  renderErrors() {
+    return(
+      <ul className="form-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -61,6 +79,7 @@ class LocationForm extends React.Component {
       <div className="location-form">
         <form className="location-form-half" onSubmit={this.locationSubmit}>
           <h2>Where's your place located?</h2>
+          { this.renderErrors() }
           <h4>Street Address</h4>
           <input type="text" id="address-search" className="location-form-input" placeholder="e.g. 123 Main St." />
           <h4>City</h4>

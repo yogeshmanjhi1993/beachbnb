@@ -16,6 +16,9 @@ const SpotMiddleware = ({ getState, dispatch }) => next => action => {
   const spotsSuccess = data => dispatch(receiveSpots(data));
   const spotSuccess = data => {
     dispatch(receiveSingleSpot(data));
+  };
+  const createSuccess = data => {
+    dispatch(receiveSingleSpot(data));
     hashHistory.push(`/spots/${data.id}`);
   };
   switch(action.type) {
@@ -31,7 +34,7 @@ const SpotMiddleware = ({ getState, dispatch }) => next => action => {
       fetchSpot(action.id, spotSuccess);
       break;
     case CREATE_SPOT:
-      createSpot(getState().spotFields, spotSuccess);
+      createSpot(getState().spotFields, createSuccess);
       break;
     default:
       return next(action);
