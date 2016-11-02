@@ -72,7 +72,7 @@ class LoginForm extends React.Component {
             <i className="fa fa-lock login-input-icon login-lock-icon" aria-hidden="true"></i>
           </div>
 
-          <input type="submit" value="Log in" className="user-submit" />
+          <input type="submit" value="Log in" className="user-submit main-login" />
           <input type="button"
                  value="Guest Log in"
                  className="user-submit guest-login"

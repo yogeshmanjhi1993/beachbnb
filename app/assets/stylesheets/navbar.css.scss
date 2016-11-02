@@ -188,11 +188,16 @@
   border: 1px solid gray;
   height: 67px;
   box-sizing: border-box;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 16px;
   color: #484848;
+}
+
+.google-link:hover {
+  box-shadow: 0px 0px 10px black;
 }
 
 .separator {
@@ -246,6 +251,10 @@
   margin-top: 15px;
 }
 
+.signup-submit:hover {
+  background: rgb(255, 62, 68);
+}
+
 .user-submit {
   width: 365px;
   height: 65px;
@@ -261,6 +270,10 @@
   margin-top: 15px;
   background: rgb(66, 131, 198);
   border: 1px solid rgb(66, 131, 198);
+}
+
+.guest-login:hover {
+  background: rgb(17, 106, 198);
 }
 
 .form-input:focus {
@@ -366,4 +379,8 @@
 
 .about-links a:hover {
   color: rgb(7, 164, 136);
+}
+
+.main-login:hover {
+  background: rgb(255, 62, 68);
 }
