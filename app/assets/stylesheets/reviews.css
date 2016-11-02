@@ -64,3 +64,8 @@
   color: white;
   padding: 10px;
 }
+
+.review-submit:hover {
+  cursor: pointer;
+  background: rgb(0, 119, 171);
+}

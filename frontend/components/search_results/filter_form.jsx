@@ -15,6 +15,7 @@ class FilterForm extends React.Component {
     this.updatePriceFilter = this.updatePriceFilter.bind(this);
     this.updateRoomtype = this.updateRoomtype.bind(this);
     this.updateRoomFilter = this.updateRoomFilter.bind(this);
+    this.toggleCheck = this.toggleCheck.bind(this);
   }
 
   updatePriceRange(e) {
@@ -54,7 +55,7 @@ class FilterForm extends React.Component {
     }
   }
 
-  updateRoomFilter () {
+  updateRoomFilter() {
     let roomtypes = [];
     if (this.state.sharedCheck) {
       roomtypes.push("shared");
@@ -72,6 +73,11 @@ class FilterForm extends React.Component {
     roomtypes = [];
   }
 
+  toggleCheck(type) {
+    this.setState({
+      [ `${type}Check`]: !this.state[`${type}Check`]
+    }, this.updateRoomFilter);
+  }
 
   render() {
     let minPrice = `$${this.state.min}`;
@@ -81,7 +87,7 @@ class FilterForm extends React.Component {
         <div className="roomtype-selector filter-form-input">
           <p>Room type</p>
           <div className="input-els checkboxes">
-            <div className="checkbox">
+            <div className="checkbox" onClick={this.toggleCheck.bind(this, "whole")}>
               <div>
                 <i className="fa fa-home check-icon" aria-hidden="true"></i>
                 Entire home
@@ -92,7 +98,7 @@ class FilterForm extends React.Component {
                 checked={this.state.wholeCheck}
                 onChange={this.updateRoomtype}/>
             </div>
-            <div className="checkbox">
+            <div className="checkbox" onClick={this.toggleCheck.bind(this, "private")}>
               <div>
                 <i className="fa fa-user check-icon" aria-hidden="true"></i>
                 Private room
@@ -103,7 +109,7 @@ class FilterForm extends React.Component {
                 checked={this.state.privateCheck}
                 onChange={this.updateRoomtype}/>
             </div>
-            <div className="checkbox">
+            <div className="checkbox" onClick={this.toggleCheck.bind(this, "shared")}>
               <div>
                 <i className="fa fa-users check-icon" aria-hidden="true"></i>
                 Shared room

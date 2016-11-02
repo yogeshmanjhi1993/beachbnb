@@ -67,8 +67,24 @@
   color: rgb(73, 73, 73);
 }
 
+.checkbox:hover {
+  cursor: pointer;
+}
+
+.checkbox input:hover {
+  cursor: pointer;
+}
+
+.rheostat-handle:hover {
+  cursor: pointer;
+}
+
 .form-slider {
   margin: 40px;
+}
+
+.form-slider:hover {
+  cursor:pointer;
 }
 
 .filter-form-input {
@@ -108,6 +124,10 @@
 
 .spot-index-item:hover {
   cursor: pointer;
+}
+
+.spot-index-item:hover .image-item-div {
+  box-shadow: 0px 0px 10px black;
 }
 
 .image-item-div {

@@ -113,6 +113,11 @@
   margin-top: 20px;
 }
 
+.book-button:hover {
+  cursor: pointer;
+  background: rgb(255, 43, 50);
+}
+
 .booking-form {
   width: 100%;
   display: flex;
