@@ -28,7 +28,8 @@ class MarkerManager {
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,
-      spotId: spot.id
+      spotId: spot.id,
+      label: spot.price.toString()
     });
     this.markers.push(marker);
   }
