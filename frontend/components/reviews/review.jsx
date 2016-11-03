@@ -40,7 +40,10 @@ class Review extends React.Component {
       let year = 1900 + createdAt.getYear();
       return (
         <li className="review-list-item" key={review.id}>
-          <p className="reviewer">{review.user.fname}</p>
+          <div className="reviewer-info">
+            <img src={review.user.image} className="review-image" />
+            <p className="reviewer">{review.user.fname}</p>
+          </div>
           <div className='review-details'>
             <p>{review.body}</p>
             <p>{month} {year}</p>

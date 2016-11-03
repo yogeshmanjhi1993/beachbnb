@@ -81,7 +81,7 @@
 
 .nav-user-info {
   position: relative;
-  display: block;
+  display: flex;
   z-index: 1000;
 }
 
@@ -383,4 +383,25 @@
 
 .main-login:hover {
   background: rgb(255, 62, 68);
+}
+
+.prof-image-text {
+  margin: 5px 0 0 0;
+  font-weight: normal;
+}
+
+.prof-image {
+  width: 383px;
+}
+
+#nav-user-prof {
+  padding: 15px;
+}
+
+.nav-profile-pic {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
 }

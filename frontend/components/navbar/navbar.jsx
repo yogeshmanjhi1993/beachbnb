@@ -117,8 +117,9 @@ class Navbar extends React.Component {
           </ul>
         </li>
         <li onClick={this.openAboutModal}><button className="nav-about">About</button></li>
-        <li className="nav-user-info">
+        <li className="nav-user-info" id="nav-user-prof">
           <button>{currentUser.fname}</button>
+          <img src={currentUser.image} className='nav-profile-pic' />
           <ul className="profile-dropdown">
             <li onClick={this.handleLogout} className="dropdown-logout"><button className="nav-logout">Log Out</button></li>
           </ul>

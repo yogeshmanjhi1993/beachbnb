@@ -21,6 +21,7 @@
 .review-list-item {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
 }
@@ -33,15 +34,12 @@
   border-bottom: none;
 }
 
-.reviewer {
-  width: 200px;
-  text-align: center;
-}
 
 .review-details {
   width: 500px;
   color: #484848;
   font-size: 13px;
+  margin-left: 60px;
 }
 
 .review-form {
@@ -68,4 +66,18 @@
 .review-submit:hover {
   cursor: pointer;
   background: rgb(0, 119, 171);
+}
+
+.reviewer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.review-image {
+  height: 60px;
+  width: 60px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
 }

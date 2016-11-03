@@ -87,7 +87,7 @@ class LocationForm extends React.Component {
           <h4>Country</h4>
           <input type="text" className="country-input location-form-input" placeholder="e.g. United States" value={this.state.country} />
           <br />
-          <input type="submit" value="next" className="location-submit" />
+          <input type="submit" value="Next" className="location-submit" />
         </form>
         <div className="location-form-image">
 

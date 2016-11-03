@@ -1,6 +1,6 @@
 json.extract! spot, :id, :description, :host_id, :lat, :lng,
                     :beds, :roomtype, :name, :price, :guests,
-                    :image, :address, :kind, :city, :country, :host,
+                    :image, :address, :kind, :city, :country,
                     :reviews
 json.reviews spot.reviews do |review|
   json.id review.id
@@ -9,4 +9,7 @@ json.reviews spot.reviews do |review|
   json.body review.body
   json.userName review.user.fname
   json.createdAt review.created_at
+end
+json.host do
+  json.extract! spot.host, :fname, :image
 end

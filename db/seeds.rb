@@ -13,13 +13,17 @@ guestuser = User.create(
   lname: "User",
   password: "guestpass"
 )
+guestuser.image = File.open('app/assets/images/guest.png')
+guestuser.save!
 
 hostuser= User.create(
   email: "host@user.com",
-  fname: "Host",
-  lname: "User",
+  fname: "Richard",
+  lname: "Kwan",
   password: "hostpass"
 )
+hostuser.image = File.open('app/assets/images/floating.jpg')
+hostuser.save!
 
 
 bora1 = Spot.create(
@@ -39,8 +43,6 @@ bora1 = Spot.create(
 )
 bora1.image = File.open('app/assets/images/bora1.jpg')
 bora1.save!
-
-
 
 bora2 = Spot.create(
   host_id: hostuser.id,
@@ -159,8 +161,8 @@ seych1.save!
 
 seych2 = Spot.create(
   host_id: hostuser.id,
-  lat: -4.680251,
-  lng: 55.525420,
+  lat: -4.564703,
+  lng: 55.451012,
   name: "Beautiful Sea View Studio",
   description: "This is a lovely, light and airy studio apartment situated in a wonderful lush green area in the picturesque north of Mahe. It has everything you need for an incredibly comfortable stay and is within 15 minutes drive to Victoria and Beau Vallon!",
   beds: 3,

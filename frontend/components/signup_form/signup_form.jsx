@@ -7,9 +7,11 @@ class SignupForm extends React.Component {
       email: "",
       fname: "",
       lname: "",
-      password: ""
+      password: "",
+      image: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleSubmit(e) {
@@ -35,6 +37,17 @@ class SignupForm extends React.Component {
 			</ul>
 		);
 	}
+
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ image: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
 
   render() {
     return (
@@ -82,7 +95,11 @@ class SignupForm extends React.Component {
               placeholder="Password" />
             <i className="fa fa-lock signup-input-icon input-lock-icon" aria-hidden="true"></i>
           </div>
-               <input type="submit" value="Sign up" className='user-submit signup-submit'/>
+          <div className="input-item">
+            <h4 className="prof-image-text">Profile Picture</h4>
+            <input type="file" className="prof-image" onChange={this.updateFile} />
+          </div>
+          <input type="submit" value="Sign up" className='user-submit signup-submit'/>
         </form>
       </div>
     );

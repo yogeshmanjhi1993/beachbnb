@@ -2,22 +2,28 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  password_digest :string
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  email           :string           not null
-#  fname           :string           not null
-#  lname           :string           not null
-#  uid             :string
-#  provider        :string
+#  id                 :integer          not null, primary key
+#  password_digest    :string
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  email              :string           not null
+#  fname              :string           not null
+#  lname              :string           not null
+#  uid                :string
+#  provider           :string
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
-  validates :email, :fname, :lname, :session_token, presence: true
+  validates :email, :fname, :lname, :session_token, :image, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  has_attached_file :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   attr_reader :password
 
   has_many :spots,

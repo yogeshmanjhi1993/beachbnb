@@ -93,6 +93,7 @@ class SpotDetail extends React.Component {
         <div className="spot-detail-body">
           <div className="spot-detail-head">
             <div className="spot-host-info">
+              <img src={this.spot.host.image} className="host-pic" />
               <p>{this.spot.host.fname}</p>
             </div>
             <div className="spot-main-info">
