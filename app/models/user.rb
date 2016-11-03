@@ -59,6 +59,7 @@ class User < ApplicationRecord
       user.fname = auth.info.first_name
       user.lname = auth.info.last_name
       user.email = auth.info.email
+      user.image = auth.info.image
       user.save!
     end
   end

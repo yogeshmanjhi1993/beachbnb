@@ -29,7 +29,6 @@ class MarkerManager {
       position: pos,
       map: this.map,
       spotId: spot.id,
-      label: spot.price.toString()
     });
     this.markers.push(marker);
   }
